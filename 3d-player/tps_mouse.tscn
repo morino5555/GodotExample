@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc334a0xt0qf4"]
+
+[ext_resource type="Script" uid="uid://ba2ilb8x1qkmd" path="res://tps_mouse.gd" id="1_ilrgx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_253av"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u3yvn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dcs6p"]
+radius = 0.908356
+
+[node name="TPS Mouse" type="CharacterBody3D"]
+script = ExtResource("1_ilrgx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_253av")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.18, 0, 0, 0, 1, 0.39, 0.29, -0.47)
+mesh = SubResource("BoxMesh_u3yvn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.18, 0, 0, 0, 1, -0.39, 0.29, -0.47)
+mesh = SubResource("BoxMesh_u3yvn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_dcs6p")
+
+[node name="CameraController" type="Node3D" parent="."]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraController"]
+transform = Transform3D(1, 0, 0, 0, 0.686656, 0.726982, 0, -0.726982, 0.686656, 0, 2.75826, 1.12476)
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraController/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
