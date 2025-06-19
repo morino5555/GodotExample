@@ -1,0 +1,164 @@
+[gd_scene load_steps=12 format=3 uid="uid://bas8f64gn33o8"]
+
+[ext_resource type="PackedScene" uid="uid://cxvcl7rk2ekxs" path="res://models/tileLarge_forest.gltf.glb" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://bfqvn3ur876m3" path="res://models/tileLarge_desert.gltf.glb" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://bujnu0qs06130" path="res://models/tileLow_desert.gltf.glb" id="3_036b0"]
+[ext_resource type="PackedScene" uid="uid://bccbrv3kqverh" path="res://models/tileLow_forest.gltf.glb" id="4_dwbse"]
+[ext_resource type="PackedScene" uid="uid://c1fft7qkg7q7r" path="res://models/gateSmallWide_teamYellow.gltf.glb" id="5_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://c1mh04aamevqc" path="res://fps_keybord.tscn" id="5_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://ddmvqq1rhvvvn" path="res://models/ball.gltf.glb" id="6_dwbse"]
+[ext_resource type="PackedScene" uid="uid://davn72dbo0aou" path="res://UI/control.tscn" id="8_gbfbk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gbfbk"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_ioo17"]
+sky_material = SubResource("ProceduralSkyMaterial_gbfbk")
+
+[sub_resource type="Environment" id="Environment_wse8f"]
+background_mode = 2
+sky = SubResource("Sky_ioo17")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wse8f")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 11, 0)
+shadow_enabled = true
+
+[node name="Floor" type="Node3D" parent="."]
+
+[node name="tileLarge_forest_gltf" parent="Floor" instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="tileLarge_forest_gltf2" parent="Floor" instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="tileLarge_desert_gltf" parent="Floor" instance=ExtResource("2_tlwt5")]
+
+[node name="tileLarge_forest_gltf3" parent="Floor" instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="tileLarge_forest_gltf4" parent="Floor" instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 12)
+
+[node name="tileLarge_forest_gltf5" parent="Floor" instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 12)
+
+[node name="tileLarge_desert_gltf2" parent="Floor" instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6)
+
+[node name="tileLarge_desert_gltf3" parent="Floor" instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="tileLarge_desert_gltf4" parent="Floor" instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="tileLarge_desert_gltf7" parent="Floor" instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="tileLarge_forest_gltf7" parent="Floor" instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 6)
+
+[node name="tileLarge_desert_gltf8" parent="Floor" instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 12)
+
+[node name="tileLarge_desert_gltf5" parent="Floor" instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="tileLarge_forest_gltf6" parent="Floor" instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 6)
+
+[node name="tileLarge_forest_gltf8" parent="Floor" instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="tileLarge_desert_gltf9" parent="Floor" instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
+
+[node name="tileLarge_desert_gltf10" parent="Floor" instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
+
+[node name="tileLarge_forest_gltf9" parent="Floor" instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -6)
+
+[node name="tileLarge_forest_gltf10" parent="Floor" instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -6)
+
+[node name="tileLarge_desert_gltf6" parent="Floor" instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="tileLarge_forest_gltf11" parent="Floor" instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -12)
+
+[node name="tileLarge_forest_gltf12" parent="Floor" instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -12)
+
+[node name="tileLarge_desert_gltf11" parent="Floor" instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="tileLarge_desert_gltf12" parent="Floor" instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
+
+[node name="tileLarge_desert_gltf13" parent="Floor" instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -12)
+
+[node name="tileLow_desert_gltf" parent="Floor" instance=ExtResource("3_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 0)
+
+[node name="tileLow_desert_gltf2" parent="Floor" instance=ExtResource("3_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 2)
+
+[node name="tileLow_forest_gltf" parent="Floor" instance=ExtResource("4_dwbse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 2)
+
+[node name="tileLow_desert_gltf3" parent="Floor" instance=ExtResource("3_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 0)
+
+[node name="tileLow_forest_gltf3" parent="Floor" instance=ExtResource("4_dwbse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 2)
+
+[node name="tileLow_forest_gltf2" parent="Floor" instance=ExtResource("4_dwbse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 0)
+
+[node name="tileLow_desert_gltf4" parent="Floor" instance=ExtResource("3_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, 0)
+
+[node name="gateSmallWide_teamYellow_gltf" parent="Floor" instance=ExtResource("5_gbfbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -12)
+
+[node name="gateSmallWide_teamYellow_gltf5" parent="Floor" instance=ExtResource("5_gbfbk")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -11, 1, -11)
+
+[node name="gateSmallWide_teamYellow_gltf6" parent="Floor" instance=ExtResource("5_gbfbk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 1, -6)
+
+[node name="gateSmallWide_teamYellow_gltf7" parent="Floor" instance=ExtResource("5_gbfbk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 1, -6)
+
+[node name="gateSmallWide_teamYellow_gltf2" parent="Floor" instance=ExtResource("5_gbfbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -12)
+
+[node name="gateSmallWide_teamYellow_gltf3" parent="Floor" instance=ExtResource("5_gbfbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -12)
+
+[node name="gateSmallWide_teamYellow_gltf4" parent="Floor" instance=ExtResource("5_gbfbk")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 11, 1, -11)
+
+[node name="ball_gltf" parent="." instance=ExtResource("6_dwbse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 0)
+
+[node name="ball" parent="ball_gltf" index="0"]
+collision_layer = 2
+collision_mask = 3
+
+[node name="FPS Keybord" parent="." instance=ExtResource("5_pkg7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560514, 1, 10.5278)
+
+[node name="Control" parent="." instance=ExtResource("8_gbfbk")]
+
+[editable path="ball_gltf"]
