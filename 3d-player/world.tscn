@@ -1,15 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bas8f64gn33o8"]
+[gd_scene load_steps=12 format=3 uid="uid://bas8f64gn33o8"]
 
 [ext_resource type="PackedScene" uid="uid://cxvcl7rk2ekxs" path="res://models/tileLarge_forest.gltf.glb" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://cc334a0xt0qf4" path="res://tps_mouse.tscn" id="1_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://bfqvn3ur876m3" path="res://models/tileLarge_desert.gltf.glb" id="2_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://bujnu0qs06130" path="res://models/tileLow_desert.gltf.glb" id="3_036b0"]
 [ext_resource type="PackedScene" uid="uid://bccbrv3kqverh" path="res://models/tileLow_forest.gltf.glb" id="4_dwbse"]
 [ext_resource type="PackedScene" uid="uid://c1fft7qkg7q7r" path="res://models/gateSmallWide_teamYellow.gltf.glb" id="5_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://ddmvqq1rhvvvn" path="res://models/ball.gltf.glb" id="6_dwbse"]
 [ext_resource type="PackedScene" uid="uid://davn72dbo0aou" path="res://UI/control.tscn" id="8_gbfbk"]
-[ext_resource type="PackedScene" uid="uid://cc334a0xt0qf4" path="res://tps_mouse.tscn" id="8_wse8f"]
-[ext_resource type="PackedScene" uid="uid://c1mh04aamevqc" path="res://fps_keybord.tscn" id="9_ic0uy"]
-[ext_resource type="PackedScene" uid="uid://dqqjf3qkympe3" path="res://fps_mouse.tscn" id="9_ioo17"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gbfbk"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -25,6 +23,9 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="World" type="Node3D"]
+
+[node name="TPS Mouse" parent="." instance=ExtResource("1_gbfbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 10)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wse8f")
@@ -159,16 +160,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 0)
 [node name="ball" parent="ball_gltf" index="0"]
 collision_layer = 2
 collision_mask = 3
-
-[node name="TPS Mouse" parent="." instance=ExtResource("8_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 10)
-
-[node name="FPS Keybord" parent="." instance=ExtResource("9_ic0uy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 9)
-visible = false
-
-[node name="FPS Mouse" parent="." instance=ExtResource("9_ioo17")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.404, 1, 10)
-visible = false
 
 [editable path="ball_gltf"]

@@ -35,4 +35,3 @@ transform = Transform3D(1, 0, 0, 0, 0.686656, 0.726982, 0, -0.726982, 0.686656, 
 spring_length = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraController/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
