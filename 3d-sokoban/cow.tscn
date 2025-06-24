@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu5q45sdm0r50"]
+
+[ext_resource type="ArrayMesh" uid="uid://dpfahyorb2p6v" path="res://models/Animals/Cow/cow.vox.obj" id="1_nuh3y"]
+[ext_resource type="Script" uid="uid://cjg5f7qihhdyg" path="res://cow.gd" id="1_yj05v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yj05v"]
+albedo_color = Color(1, 0.150361, 0.347901, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m1w7b"]
+material = SubResource("StandardMaterial3D_yj05v")
+top_radius = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m1w7b"]
+size = Vector3(2, 2, 2)
+
+[node name="Cow" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_yj05v")
+
+[node name="Cow_vox" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_nuh3y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cow_vox"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.42648, 0.40488)
+visible = false
+mesh = SubResource("CylinderMesh_m1w7b")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_m1w7b")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 0)
+collision_mask = 7
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 5

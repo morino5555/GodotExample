@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6k1os4bt3b33"
+path="res://.godot/imported/apple.vox.obj-4761b83f08f8b31136218ea80ccf0289.mesh"
+
+[deps]
+
+files=["res://.godot/imported/apple.vox.obj-4761b83f08f8b31136218ea80ccf0289.mesh"]
+
+source_file="res://models/Collectibles/apple/apple.vox.obj"
+dest_files=["res://.godot/imported/apple.vox.obj-4761b83f08f8b31136218ea80ccf0289.mesh", "res://.godot/imported/apple.vox.obj-4761b83f08f8b31136218ea80ccf0289.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

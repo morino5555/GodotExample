@@ -1,0 +1,416 @@
+[gd_scene load_steps=39 format=3 uid="uid://c4wvox3xao0pp"]
+
+[ext_resource type="Script" uid="uid://dhjiskhp007n" path="res://level_1.gd" id="1_5rr72"]
+[ext_resource type="ArrayMesh" uid="uid://fdt68ja2mcd6" path="res://models/Green/grass1/grass1.vox.obj" id="2_gyffv"]
+[ext_resource type="ArrayMesh" uid="uid://dwp6ehikg2xli" path="res://models/Green/grassmushroom/grassmushroom.vox.obj" id="3_1pe0h"]
+[ext_resource type="ArrayMesh" uid="uid://dhl63h8dcfy0p" path="res://models/Green/tree1/tree.vox.obj" id="4_27bay"]
+[ext_resource type="ArrayMesh" uid="uid://bvhgfcffnp0x3" path="res://models/Green/tree2/tree2.vox.obj" id="5_sof0w"]
+[ext_resource type="ArrayMesh" uid="uid://dc464ovx6ie8r" path="res://models/Green/walktile/walktile.vox.obj" id="6_ggavl"]
+[ext_resource type="PackedScene" uid="uid://cu5q45sdm0r50" path="res://cow.tscn" id="7_ubhxj"]
+[ext_resource type="PackedScene" uid="uid://s5et6avvajg2" path="res://box_1.tscn" id="8_65or1"]
+[ext_resource type="PackedScene" uid="uid://dqeuwtqki53uy" path="res://apple.tscn" id="9_lhbbi"]
+[ext_resource type="PackedScene" uid="uid://5ccd7k77tl4q" path="res://paused_menu.tscn" id="10_gyffv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dwbse"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_pkg7o"]
+sky_material = SubResource("ProceduralSkyMaterial_dwbse")
+
+[sub_resource type="Environment" id="Environment_gbfbk"]
+background_mode = 2
+sky = SubResource("Sky_pkg7o")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dwbse"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pkg7o"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gbfbk"]
+points = PackedVector3Array(-1, 0, -1, 1, 0, -1, -1, 0, 1, -1, 1.99988, -1, 1, 0, 1, 1, 1.99988, -1, -1, 1.99988, 1, -0.300117, 2.6, -0.200078, -0.200078, 2.6, -0.300117, 1, 1.99988, 1, 0.199883, 2.6, -0.300117, 0.299922, 2.6, -0.200078, -0.200078, 2.6, 0.299922, -0.300117, 2.6, 0.199883, 0.299922, 2.6, 0.199883, 0.199883, 2.6, 0.299922)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ioo17"]
+points = PackedVector3Array(1, 2, 1, 1, 0.799922, 1, 1, 2, -1, -1, 2, 1, 1, 0.799922, -1, -1, 0.799922, 1, 0.399961, 0, 0.399961, -1, 2, -1, 0.399961, 0, -0.400157, -1, 0.799922, -1, -0.400157, 0, 0.399961, -0.400157, 0, -0.400157)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wse8f"]
+points = PackedVector3Array(-1, 0.799902, -1, -0.400157, 0, -0.400157, -1, 0.799902, 1, -1, 1.49978, -1, 1, 0.799902, -1, -0.400157, 0, 0.399961, 0.399961, 0, -0.400157, 1, 0.799902, 1, -1, 1.49978, 1, -0.800117, 2.0999, -0.800117, 1, 1.49978, -1, 0.399961, 0, 0.399961, 1, 1.49978, 1, -0.800117, 2.0999, 0.799922, -0.600039, 2.6, -0.600039, 0.799922, 2.0999, -0.800117, 0.799922, 2.0999, 0.799922, -0.600039, 2.6, 0.599843, 0.599843, 2.6, -0.600039, 0.599843, 2.6, 0.599843)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ic0uy"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k3n1d"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2o6r5"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_70uel"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hiqwa"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2u3nc"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_udxuc"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ikiii"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cbp6q"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_26xuy"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bc84e"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wukud"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_il2jm"]
+points = PackedVector3Array(1, 2, 1, 1, 2, -1, -1, 2, 1, 1, 0, 1, 1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 0, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wjb0r"]
+points = PackedVector3Array(-1, 0.1, -1, -1, 0.1, 1, -1, 1.7, -1, 1, 0.1, -1, -1, 1.7, 1, 1, 0.1, 1, 1, 1.7, -1, 1, 1.7, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mc2jv"]
+points = PackedVector3Array(-1, 0.1, -1, -1, 0.1, 1, -1, 1.7, -1, 1, 0.1, -1, -1, 1.7, 1, 1, 0.1, 1, 1, 1.7, -1, 1, 1.7, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bo7i5"]
+points = PackedVector3Array(-1, 0.1, -1, -1, 0.1, 1, -1, 1.7, -1, 1, 0.1, -1, -1, 1.7, 1, 1, 0.1, 1, 1, 1.7, -1, 1, 1.7, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4h6ng"]
+points = PackedVector3Array(-1, 0.1, -1, -1, 0.1, 1, -1, 1.7, -1, 1, 0.1, -1, -1, 1.7, 1, 1, 0.1, 1, 1, 1.7, -1, 1, 1.7, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o3ebs"]
+points = PackedVector3Array(-1, 0.1, -1, -1, 0.1, 1, -1, 1.7, -1, 1, 0.1, -1, -1, 1.7, 1, 1, 0.1, 1, 1, 1.7, -1, 1, 1.7, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k83mh"]
+points = PackedVector3Array(-1, 0.1, -1, -1, 0.1, 1, -1, 1.7, -1, 1, 0.1, -1, -1, 1.7, 1, 1, 0.1, 1, 1, 1.7, -1, 1, 1.7, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qktwf"]
+points = PackedVector3Array(-1, 0.1, -1, -1, 0.1, 1, -1, 1.7, -1, 1, 0.1, -1, -1, 1.7, 1, 1, 0.1, 1, 1, 1.7, -1, 1, 1.7, 1)
+
+[node name="Level1" type="Node3D"]
+script = ExtResource("1_5rr72")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gbfbk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 5, 13, 0)
+shadow_enabled = true
+
+[node name="Platform" type="Node3D" parent="."]
+
+[node name="Floor" type="Node3D" parent="Platform" groups=["Floor"]]
+
+[node name="Grass1_vox8" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_dwbse")
+
+[node name="Grass1_vox9" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_pkg7o")
+
+[node name="Grassmushroom_vox" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+mesh = ExtResource("3_1pe0h")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grassmushroom_vox"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grassmushroom_vox/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_gbfbk")
+
+[node name="Tree_vox" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 0)
+mesh = ExtResource("4_27bay")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Tree_vox"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Tree_vox/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ioo17")
+
+[node name="Tree2_vox" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
+mesh = ExtResource("5_sof0w")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Tree2_vox"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Tree2_vox/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_wse8f")
+
+[node name="Grass1_vox" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ic0uy")
+
+[node name="Grass1_vox3" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_k3n1d")
+
+[node name="Grass1_vox4" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_2o6r5")
+
+[node name="Grass1_vox12" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox12/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_70uel")
+
+[node name="Grass1_vox13" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox13/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_hiqwa")
+
+[node name="Grass1_vox14" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox14/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_2u3nc")
+
+[node name="Grass1_vox15" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox15/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_udxuc")
+
+[node name="Grass1_vox5" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ikiii")
+
+[node name="Grass1_vox6" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cbp6q")
+
+[node name="Grass1_vox2" type="MeshInstance3D" parent="Platform/Floor"]
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_26xuy")
+
+[node name="Grass1_vox7" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_bc84e")
+
+[node name="Grass1_vox10" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_wukud")
+
+[node name="Grass1_vox11" type="MeshInstance3D" parent="Platform/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+mesh = ExtResource("2_gyffv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Floor/Grass1_vox11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor/Grass1_vox11/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_il2jm")
+
+[node name="Road" type="Node3D" parent="Platform" groups=["Load"]]
+
+[node name="Walktile_vox" type="MeshInstance3D" parent="Platform/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = ExtResource("6_ggavl")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Road/Walktile_vox"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Road/Walktile_vox/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_wjb0r")
+
+[node name="Walktile_vox2" type="MeshInstance3D" parent="Platform/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+mesh = ExtResource("6_ggavl")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Road/Walktile_vox2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Road/Walktile_vox2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_mc2jv")
+
+[node name="Walktile_vox3" type="MeshInstance3D" parent="Platform/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+mesh = ExtResource("6_ggavl")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Road/Walktile_vox3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Road/Walktile_vox3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_bo7i5")
+
+[node name="Walktile_vox8" type="MeshInstance3D" parent="Platform/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+mesh = ExtResource("6_ggavl")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Road/Walktile_vox8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Road/Walktile_vox8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_bo7i5")
+
+[node name="Walktile_vox9" type="MeshInstance3D" parent="Platform/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+mesh = ExtResource("6_ggavl")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Road/Walktile_vox9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Road/Walktile_vox9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_bo7i5")
+
+[node name="Walktile_vox4" type="MeshInstance3D" parent="Platform/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+mesh = ExtResource("6_ggavl")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Road/Walktile_vox4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Road/Walktile_vox4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_4h6ng")
+
+[node name="Walktile_vox5" type="MeshInstance3D" parent="Platform/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+mesh = ExtResource("6_ggavl")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Road/Walktile_vox5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Road/Walktile_vox5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_o3ebs")
+
+[node name="Walktile_vox6" type="MeshInstance3D" parent="Platform/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+mesh = ExtResource("6_ggavl")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Road/Walktile_vox6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Road/Walktile_vox6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_k83mh")
+
+[node name="Walktile_vox7" type="MeshInstance3D" parent="Platform/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+mesh = ExtResource("6_ggavl")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Road/Walktile_vox7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Road/Walktile_vox7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qktwf")
+
+[node name="Walktile_vox10" type="MeshInstance3D" parent="Platform/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+mesh = ExtResource("6_ggavl")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/Road/Walktile_vox10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Road/Walktile_vox10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qktwf")
+
+[node name="Cow" parent="." instance=ExtResource("7_ubhxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.8, 0)
+collision_layer = 1
+collision_mask = 3
+
+[node name="Boxs" type="Node3D" parent="."]
+
+[node name="Box1" parent="Boxs" instance=ExtResource("8_65or1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.8, 4)
+collision_mask = 1
+
+[node name="Goals" type="Node3D" parent="."]
+
+[node name="Apple" parent="Goals" instance=ExtResource("9_lhbbi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.8, 4)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.617297, 0.78673, 0, -0.78673, 0.617297, 3.55258, 8.91306, 7.87143)
+
+[node name="PausedMenu" parent="." instance=ExtResource("10_gyffv")]

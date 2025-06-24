@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://s5et6avvajg2"]
+
+[ext_resource type="Script" uid="uid://c25enovx4wiga" path="res://box_1.gd" id="1_78r5u"]
+[ext_resource type="ArrayMesh" uid="uid://dhviyikub2lrf" path="res://models/Green/box1/box1.vox.obj" id="1_w7rbg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_78r5u"]
+size = Vector3(2, 2, 2)
+
+[node name="Box1" type="CharacterBody3D" groups=["Box"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_78r5u")
+
+[node name="Box1_vox" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_w7rbg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_78r5u")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 0)
+collision_mask = 7
+debug_shape_custom_color = Color(0.842635, 3.56168e-06, 4.81307e-07, 1)
+debug_shape_thickness = 5

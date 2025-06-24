@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqeuwtqki53uy"]
+
+[ext_resource type="ArrayMesh" uid="uid://b6k1os4bt3b33" path="res://models/Collectibles/apple/apple.vox.obj" id="1_3ed3y"]
+[ext_resource type="Script" uid="uid://cr0hm1s2jfvkp" path="res://apple.gd" id="1_n78qv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n78qv"]
+albedo_color = Color(0.99718, 0.391044, 0.323493, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3ed3y"]
+height = 0.5
+radius = 0.7
+
+[node name="Apple" type="Area3D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_n78qv")
+
+[node name="Apple_vox" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_3ed3y")
+surface_material_override/0 = SubResource("StandardMaterial3D_n78qv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("CylinderShape3D_3ed3y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
