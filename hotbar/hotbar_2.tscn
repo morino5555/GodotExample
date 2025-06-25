@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3g8uvdv6qoqk"]
+
+[ext_resource type="Texture2D" uid="uid://w6nplsmsjr7n" path="res://icon.svg" id="1_bmwsg"]
+
+[node name="Hotbar2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -141.0
+offset_top = -123.0
+offset_right = 141.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+item_count = 4
+max_columns = 4
+icon_mode = 0
+icon_scale = 0.5
+item_0/text = "1"
+item_0/icon = ExtResource("1_bmwsg")
+item_1/text = "2"
+item_1/icon = ExtResource("1_bmwsg")
+item_2/text = "3"
+item_2/icon = ExtResource("1_bmwsg")
+item_3/text = "4"
+item_3/icon = ExtResource("1_bmwsg")

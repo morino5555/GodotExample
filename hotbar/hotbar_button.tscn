@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8q2trvqdjsjk"]
+
+[ext_resource type="Script" uid="uid://d4kd6btmlvwfe" path="res://hotbar_button.gd" id="1_hh0l3"]
+
+[node name="HotbarButton" type="Button"]
+custom_minimum_size = Vector2(60, 40)
+offset_right = 18.0
+offset_bottom = 31.0
+text = "X"
+icon_alignment = 1
+vertical_icon_alignment = 2
+script = ExtResource("1_hh0l3")

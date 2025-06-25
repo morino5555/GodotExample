@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4qsqc4irdaf1"]
+
+[ext_resource type="PackedScene" uid="uid://c8q2trvqdjsjk" path="res://hotbar_button.tscn" id="1_mjyg7"]
+[ext_resource type="Shortcut" uid="uid://ccj1h2j0ges00" path="res://hotbar_shortcut1.tres" id="2_o4ofg"]
+[ext_resource type="Texture2D" uid="uid://w6nplsmsjr7n" path="res://icon.svg" id="2_qbt7h"]
+[ext_resource type="Shortcut" uid="uid://c4756ksrv6vq8" path="res://hotbar_shortcut2.tres" id="4_u48fq"]
+[ext_resource type="Shortcut" uid="uid://bcd58my3pvhv6" path="res://hotbar_shortcut3.tres" id="5_66258"]
+[ext_resource type="Shortcut" uid="uid://d3ldbovq808d5" path="res://hotbar_shortcut4.tres" id="6_sinom"]
+[ext_resource type="Shortcut" uid="uid://8oi772v0e3bq" path="res://hotbar_shortcut5.tres" id="7_dup21"]
+
+[node name="Hotbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -348.0
+offset_top = -182.0
+offset_right = 348.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HotbarButton" parent="HBoxContainer" instance=ExtResource("1_mjyg7")]
+layout_mode = 2
+shortcut = ExtResource("2_o4ofg")
+icon = ExtResource("2_qbt7h")
+dispaly_name = &"test1"
+mana_cost = 10
+damage = 0.5
+
+[node name="HotbarButton2" parent="HBoxContainer" instance=ExtResource("1_mjyg7")]
+layout_mode = 2
+shortcut = ExtResource("4_u48fq")
+icon = ExtResource("2_qbt7h")
+dispaly_name = &"test2"
+mana_cost = 5
+damage = 10.0
+
+[node name="HotbarButton3" parent="HBoxContainer" instance=ExtResource("1_mjyg7")]
+layout_mode = 2
+shortcut = ExtResource("5_66258")
+icon = ExtResource("2_qbt7h")
+dispaly_name = &"test3"
+mana_cost = 3
+damage = 0.3
+
+[node name="HotbarButton4" parent="HBoxContainer" instance=ExtResource("1_mjyg7")]
+layout_mode = 2
+shortcut = ExtResource("6_sinom")
+icon = ExtResource("2_qbt7h")
+dispaly_name = &"test4"
+mana_cost = 4
+damage = 0.4
+
+[node name="HotbarButton5" parent="HBoxContainer" instance=ExtResource("1_mjyg7")]
+layout_mode = 2
+shortcut = ExtResource("7_dup21")
+icon = ExtResource("2_qbt7h")
+dispaly_name = &"test5"
+mana_cost = 5
+damage = 1.0

@@ -15,6 +15,10 @@ run/main_scene="uid://c4wvox3xao0pp"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/suzuk/Videos/画面録画/soukoban.avi"
+
 [input]
 
 move_left={
