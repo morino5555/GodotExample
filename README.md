@@ -1,1 +1,1 @@
-https://gdmemo.hateblo.jp/
+https://webpaprika.com/
