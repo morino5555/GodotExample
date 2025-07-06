@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://d066l7ur0uol0"]
+
+[ext_resource type="Texture2D" uid="uid://ct4eukpu7lsyf" path="res://assets/ships_packed.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://c5dwhslu3574" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="AudioStream" uid="uid://2264oqom1oda" path="res://sfx/player Weapon Laser 36.wav" id="3_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(98, 54)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 10
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("1_3vyb7")
+region_enabled = true
+region_rect = Rect2(32.3822, 38.0748, 31.5652, 20.9512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -44)
+
+[node name="shootTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qhqgy")
+volume_db = -3.0
+
+[connection signal="timeout" from="shootTimer" to="." method="_on_shoot_timer_timeout"]

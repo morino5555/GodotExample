@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://chb83l8754l6d"]
+
+[ext_resource type="PackedScene" uid="uid://dib7ifyy3j2il" path="res://scenes/enemy_1.tscn" id="1_hqy2m"]
+
+[node name="Enemy2" instance=ExtResource("1_hqy2m")]
+
+[node name="Sprite2D" parent="." index="0"]
+region_rect = Rect2(63.7479, 3.67828, 32.1892, 24.714)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-0.5, 0.5)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="4"]
+position = Vector2(0, -37)

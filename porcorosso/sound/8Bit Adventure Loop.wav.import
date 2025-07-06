@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2grrjk5p8ne6"
+path="res://.godot/imported/8Bit Adventure Loop.wav-65183bf14e2d036c9990373e2085f37a.sample"
+
+[deps]
+
+source_file="res://sound/8Bit Adventure Loop.wav"
+dest_files=["res://.godot/imported/8Bit Adventure Loop.wav-65183bf14e2d036c9990373e2085f37a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

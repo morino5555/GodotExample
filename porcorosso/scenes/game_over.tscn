@@ -1,0 +1,115 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgpcdcucvcnhu"]
+
+[ext_resource type="Script" uid="uid://dkrw4a64yc28o" path="res://scenes/game_over.gd" id="1_xeevv"]
+[ext_resource type="FontFile" uid="uid://s7nndahvvslu" path="res://fonts/ThaleahFat.ttf" id="2_wqhvx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqhvx"]
+bg_color = Color(0.808246, 0.535962, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xeevv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.262745, 0.262745, 0.262745, 0.431373)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -165.0
+offset_right = 165.0
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wqhvx")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -143.0
+offset_top = 24.0
+offset_right = 143.0
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_wqhvx")
+theme_override_font_sizes/font_size = 65
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HiscoreLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.5
+offset_top = 95.0
+offset_right = 131.5
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_wqhvx")
+theme_override_font_sizes/font_size = 45
+text = "Hi-Score:9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.0
+offset_top = 151.0
+offset_right = 115.0
+offset_bottom = 206.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_wqhvx")
+theme_override_font_sizes/font_size = 45
+text = "Score:9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 235.0
+offset_right = 123.0
+offset_bottom = 292.0
+theme_override_fonts/font = ExtResource("2_wqhvx")
+theme_override_font_sizes/font_size = 45
+text = "QUIT"
+
+[node name="RestartButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 235.0
+offset_right = 316.0
+offset_bottom = 292.0
+theme_override_fonts/font = ExtResource("2_wqhvx")
+theme_override_font_sizes/font_size = 45
+text = "RESTART"
+
+[connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Panel/RestartButton" to="." method="_on_restart_button_pressed"]
