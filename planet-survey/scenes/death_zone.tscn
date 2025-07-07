@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://brrwxwstsdk44"]
+
+[ext_resource type="Script" uid="uid://q56oxxhwuo0" path="res://scenes/death_zone.gd" id="1_orvjg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_orvjg"]
+
+[node name="DeathZone" type="Area2D"]
+script = ExtResource("1_orvjg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_orvjg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

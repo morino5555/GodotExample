@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://f286enj80ouq"]
+
+[ext_resource type="Texture2D" uid="uid://d4lu5hth8p4cs" path="res://asset/tile/spritesheet-enemies-default.png" id="1_371uh"]
+[ext_resource type="Script" uid="uid://dt3dax5ooypq1" path="res://scenes/slime.gd" id="1_p2gj0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2gj0"]
+atlas = ExtResource("1_371uh")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6pvg"]
+atlas = ExtResource("1_371uh")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjw23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2gj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6pvg")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2npkn"]
+radius = 21.0238
+
+[node name="Slime" type="Area2D"]
+script = ExtResource("1_p2gj0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pjw23")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_2npkn")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-10, 22)
+target_position = Vector2(-29, 19)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(10, 22)
+target_position = Vector2(29, 19)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

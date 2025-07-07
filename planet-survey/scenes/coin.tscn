@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7j0qk16tgel0"]
+
+[ext_resource type="Script" uid="uid://beesym5b7mjww" path="res://scenes/coin.gd" id="1_11l1o"]
+[ext_resource type="Texture2D" uid="uid://cec7larbxutyg" path="res://asset/sprite/coin_gold.png" id="1_i64fm"]
+[ext_resource type="Texture2D" uid="uid://c33uplg81px8o" path="res://asset/sprite/coin_gold_side.png" id="2_11l1o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d14el"]
+atlas = ExtResource("1_i64fm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ikuy"]
+atlas = ExtResource("2_11l1o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wnlwo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d14el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ikuy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jig8b"]
+radius = 18.0278
+
+[node name="Coin" type="Area2D"]
+script = ExtResource("1_11l1o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wnlwo")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jig8b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
