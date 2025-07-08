@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3wii76j82nbg"]
+
+[ext_resource type="FontFile" uid="uid://cmpp6hfy6duhm" path="res://assets/font/ThaleahFat.ttf" id="1_6xfo1"]
+[ext_resource type="Script" uid="uid://dtn3681ss6srd" path="res://scenes/stage_2.gd" id="1_j3ydg"]
+
+[node name="Stage2" type="Node2D"]
+script = ExtResource("1_j3ydg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1.44392e-06, 0.690578, 0.429834, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -126.0
+offset_right = 117.5
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_6xfo1")
+theme_override_font_sizes/font_size = 80
+text = "STAGE2"
+
+[node name="Button" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = 51.0
+offset_right = 96.5
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_6xfo1")
+theme_override_font_sizes/font_size = 45
+text = "BACK"
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,104 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2scfbml5rjcl"]
+
+[ext_resource type="Script" uid="uid://otcsl8t2r0m2" path="res://scenes/game.gd" id="1_yqjtg"]
+[ext_resource type="FontFile" uid="uid://cmpp6hfy6duhm" path="res://assets/font/ThaleahFat.ttf" id="2_lnu2h"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_yqjtg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0470588, 0.337255, 0.254902, 0.392157)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_top = 70.0
+offset_right = 275.0
+offset_bottom = 144.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_lnu2h")
+theme_override_font_sizes/font_size = 80
+text = "Stage Selection"
+
+[node name="Stage1Button" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -142.5
+offset_right = 150.0
+offset_bottom = -77.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_lnu2h")
+theme_override_font_sizes/font_size = 60
+text = "STAGE1"
+
+[node name="Stage2Button" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -40.5
+offset_right = 150.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_lnu2h")
+theme_override_font_sizes/font_size = 60
+text = "STAGE2"
+
+[node name="MenuButton" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 60.5
+offset_right = 150.0
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_lnu2h")
+theme_override_font_sizes/font_size = 60
+text = "MENU"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 159.5
+offset_right = 150.0
+offset_bottom = 224.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_lnu2h")
+theme_override_font_sizes/font_size = 60
+text = "QUIT"
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/Stage1Button" to="." method="_on_stage_1_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/Stage2Button" to="." method="_on_stage_2_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/QuitButton" to="." method="_on_quit_button_pressed"]
