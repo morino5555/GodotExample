@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbm0mvw2asjqy"]
+
+[ext_resource type="PackedScene" uid="uid://ddtj15mpanibq" path="res://assets/dungeon/chest.gltf" id="1_hgbiw"]
+[ext_resource type="Script" uid="uid://dslc2vuj3pt2n" path="res://object/chest_2.gd" id="2_ymak2"]
+
+[sub_resource type="Animation" id="Animation_ymak2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chest/chest_lid:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jjy1q"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chest/chest_lid:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.309, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hgbiw"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chest/chest_lid:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.309, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jjy1q"]
+_data = {
+&"RESET": SubResource("Animation_ymak2"),
+&"close": SubResource("Animation_jjy1q"),
+&"open": SubResource("Animation_hgbiw")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1uk4a"]
+size = Vector3(2, 1.56299, 2.0575)
+
+[node name="chest2" instance=ExtResource("1_hgbiw")]
+script = ExtResource("2_ymak2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_jjy1q")
+}
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.897, 0.260728)
+shape = SubResource("BoxShape3D_1uk4a")
+
+[node name="Label3D" type="Label3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.90676, 0)
+visible = false
+pixel_size = 0.01
+billboard = 1
+text = "Press \"E\""
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

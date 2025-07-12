@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7f5x8ie8ttm2"]
+
+[ext_resource type="MeshLibrary" uid="uid://bbqfe1ts5ym7x" path="res://scenes2/meshlib.tres" id="1_bxmac"]
+
+[node name="World2" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_bxmac")
+data = {
+"cells": PackedInt32Array(0, 0, 1, 2, 0, 1, 0, 2, 0, 2, 2, 0, 65534, 0, 1048576, 1, 0, 1048583, 4, 65534, 1, 4, 0, 1, 6, 0, 1, 6, 65534, 1, 2, 65534, 1, 65540, 2, 5)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)

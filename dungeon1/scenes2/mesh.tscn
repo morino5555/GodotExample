@@ -1,0 +1,28 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1dv5vk4blmi0"]
+
+[ext_resource type="PackedScene" uid="uid://1qbnmmqw356w" path="res://assets/dungeon/floor_wood_large_dark.gltf" id="1_waear"]
+[ext_resource type="PackedScene" uid="uid://brl57qebb0mbj" path="res://assets/dungeon/floor_tile_large.gltf" id="2_0m6ce"]
+[ext_resource type="PackedScene" uid="uid://2644fcqkgqju" path="res://assets/dungeon/wall_corner_small.gltf" id="3_w6uqa"]
+[ext_resource type="PackedScene" uid="uid://lr26my2mmtbn" path="res://assets/dungeon/wall_doorway_scaffold.gltf" id="4_biwr5"]
+[ext_resource type="PackedScene" uid="uid://b6vy8hh43eawv" path="res://assets/dungeon/wall_shelves.gltf" id="5_7nsgb"]
+[ext_resource type="PackedScene" uid="uid://hhgwicqoyy81" path="res://assets/dungeon/wall_arched.gltf" id="6_rckjs"]
+[ext_resource type="PackedScene" uid="uid://d1c717nk0dlv8" path="res://assets/dungeon/sword_shield.gltf" id="7_ofhr6"]
+[ext_resource type="PackedScene" uid="uid://b463lfk6vkmwm" path="res://assets/dungeon/table_long_decorated_A.gltf" id="8_v4f2e"]
+
+[node name="Mesh" type="Node3D"]
+
+[node name="floor_wood_large_dark2" parent="." instance=ExtResource("1_waear")]
+
+[node name="floor_tile_large2" parent="." instance=ExtResource("2_0m6ce")]
+
+[node name="wall_corner_small2" parent="." instance=ExtResource("3_w6uqa")]
+
+[node name="wall_doorway_scaffold2" parent="." instance=ExtResource("4_biwr5")]
+
+[node name="wall_shelves2" parent="." instance=ExtResource("5_7nsgb")]
+
+[node name="wall_arched2" parent="." instance=ExtResource("6_rckjs")]
+
+[node name="sword_shield2" parent="." instance=ExtResource("7_ofhr6")]
+
+[node name="table_long_decorated_A2" parent="." instance=ExtResource("8_v4f2e")]
