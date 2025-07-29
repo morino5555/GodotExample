@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://beb0adbxun84l"]
+
+[ext_resource type="PackedScene" uid="uid://dcigysjeouvmv" path="res://assets/dungeon/floor_tile_large.gltf" id="1_21uea"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_58713"]
+points = PackedVector3Array(-2, -0.1, -2, -2, -0.1, 2, -2, 0.0499853, -2, 2, -0.1, -2, -2, 0.0499853, 2, 2, -0.1, 2, 0, 0.05, 0, 2, 0.0499853, -2, 2, 0.0499853, 2)
+
+[node name="floor_large" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_58713")
+
+[node name="floor_tile_large2" parent="." instance=ExtResource("1_21uea")]
