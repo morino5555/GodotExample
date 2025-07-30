@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1jotdwis5edx"]
+
+[ext_resource type="PackedScene" uid="uid://b6ci2hvwuqxs0" path="res://scene/car_suv.tscn" id="1_fghjm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fghjm"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_bp0px"]
+sky_material = SubResource("ProceduralSkyMaterial_fghjm")
+
+[sub_resource type="Environment" id="Environment_5u11y"]
+background_mode = 2
+sky = SubResource("Sky_bp0px")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2k3b"]
+albedo_color = Color(0.32998, 0.113888, 0, 1)
+
+[node name="Test" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5u11y")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+use_collision = true
+size = Vector3(100, 0.1, 100)
+material = SubResource("StandardMaterial3D_m2k3b")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.922119, 0.596989, 7.56514)
+size = Vector3(2.84424, 1, 1)
+
+[node name="CarSUV" parent="." instance=ExtResource("1_fghjm")]
+transform = Transform3D(-0.998718, 0, -0.0506279, 0, 1, 0, 0.0506279, 0, -0.998718, 0, 0.505728, 0)
