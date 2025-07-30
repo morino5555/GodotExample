@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh1weibmq5wfp"]
+
+[ext_resource type="Texture2D" uid="uid://bqu0fn31t42ki" path="res://icon.svg" id="1_ayd5w"]
+
+[node name="level3" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -643.0
+offset_top = -392.0
+offset_right = 664.0
+offset_bottom = 428.0
+color = Color(0.501961, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-296, -94)
+rotation = -0.526297
+scale = Vector2(2.00781, 2.00781)
+texture = ExtResource("1_ayd5w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-14, 204)
+texture = ExtResource("1_ayd5w")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(356, -106)
+rotation = 0.582714
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("1_ayd5w")
+
+[node name="Camera2D" type="Camera2D" parent="."]
