@@ -1,6 +1,6 @@
 extends Node3D
 
-var next_scene = preload("res://scene/scene_2.tscn")
+var next_scene = load("res://scene/scene_2.tscn")
 
 @onready var start_marker: Marker3D = $startMarker
 var player
@@ -12,11 +12,9 @@ func _ready() -> void:
 	player.transform.origin = start_marker.global_position
 	add_child(player)
 
-func _on_signal_print(vallue):
-	prints("signal:", vallue)
-
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		#print("Player")
 		#get_tree().change_scene_to_file.bind("res://scene/scene_2.tscn").call_deferred()
+		#remove_child(player)
 		get_tree().change_scene_to_packed.bind(next_scene).call_deferred()
