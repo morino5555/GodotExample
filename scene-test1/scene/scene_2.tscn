@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://yea7sccw0tlb"]
+
+[ext_resource type="Script" uid="uid://00ryxp4nvyat" path="res://scene/scene_2.gd" id="1_ko8ae"]
+[ext_resource type="Texture2D" uid="uid://chu1w8q3rx1he" path="res://assets/textures/Green/texture_01.png" id="1_vpjo6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ko8ae"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_nev6h"]
+sky_material = SubResource("ProceduralSkyMaterial_ko8ae")
+
+[sub_resource type="Environment" id="Environment_tf1jc"]
+background_mode = 2
+sky = SubResource("Sky_nev6h")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko8ae"]
+albedo_texture = ExtResource("1_vpjo6")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nev6h"]
+material = SubResource("StandardMaterial3D_ko8ae")
+size = Vector2(20, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tf1jc"]
+points = PackedVector3Array(-10, 0, -10, -10, 0, 10, 10, 0, -10, 10, 0, 10)
+
+[node name="scene2" type="Node3D"]
+script = ExtResource("1_ko8ae")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tf1jc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_nev6h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_tf1jc")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447974, 3.87154)
+use_collision = true
+
+[node name="startMarker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00780261, 1.534, -3.98515)
