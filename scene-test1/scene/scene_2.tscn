@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://yea7sccw0tlb"]
+[gd_scene load_steps=13 format=3 uid="uid://yea7sccw0tlb"]
 
 [ext_resource type="Script" uid="uid://00ryxp4nvyat" path="res://scene/scene_2.gd" id="1_ko8ae"]
 [ext_resource type="Texture2D" uid="uid://chu1w8q3rx1he" path="res://assets/textures/Green/texture_01.png" id="1_vpjo6"]
 [ext_resource type="PackedScene" uid="uid://tyh3xxm88i8o" path="res://scene/base/wall_doorway_sides.tscn" id="3_nev6h"]
 [ext_resource type="PackedScene" uid="uid://d23sg6w7eh00q" path="res://scene/base/wall.tscn" id="4_tf1jc"]
+[ext_resource type="PackedScene" uid="uid://bwqfsfbtxpgr4" path="res://scene/base/chest.tscn" id="5_tx87k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ko8ae"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -122,5 +123,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0,
 
 [node name="wall8" parent="wall" instance=ExtResource("4_tf1jc")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 5)
+
+[node name="chest" parent="." instance=ExtResource("5_tx87k")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -3, 0, 0)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

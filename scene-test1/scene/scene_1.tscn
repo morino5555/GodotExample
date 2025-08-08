@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cyxp54bfi3xts" path="res://assets/textures/Dark/texture_01.png" id="1_cgmaq"]
 [ext_resource type="Script" uid="uid://dbh2g6hinpec7" path="res://scene/scene_1.gd" id="1_cy6qo"]
 [ext_resource type="PackedScene" uid="uid://b3ml5l2l6e8wu" path="res://scene/base/rubble_large.tscn" id="2_fen3a"]
-[ext_resource type="PackedScene" uid="uid://tyh3xxm88i8o" path="res://scene/base/wall_doorway_sides.tscn" id="4_fen3a"]
 [ext_resource type="PackedScene" uid="uid://d32g6kui7mmm2" path="res://scene/base/block_dirt.tscn" id="5_eucco"]
+[ext_resource type="PackedScene" uid="uid://druguedgssbcx" path="res://assets/dungeon/wall_doorway_scaffold.tscn" id="6_eucco"]
 [ext_resource type="PackedScene" uid="uid://dvvkl0i70sjqn" path="res://scene/base/block_gravel.tscn" id="6_jjve5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cgmaq"]
@@ -93,13 +93,10 @@ mesh = SubResource("PrismMesh_fen3a")
 shape = SubResource("ConcavePolygonShape3D_cy6qo")
 
 [node name="startMarker" type="Marker3D" parent="."]
-transform = Transform3D(-0.479473, 0, 0.877557, 0, 1, 0, -0.877557, 0, -0.479473, 4.49658, 5.14739, -9.22002)
-
-[node name="wall_doorway_sides" parent="." instance=ExtResource("4_fen3a")]
-transform = Transform3D(0.077798, 0, -0.996969, 0, 1, 0, 0.996969, 0, 0.077798, 13.907, 0, -13.0931)
+transform = Transform3D(-0.479473, 0, 0.877557, 0, 1, 0, -0.877557, 0, -0.479473, -5.15263, 5.14739, -11.8163)
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 13.7076, 0.496105, -13.0389)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 14.2141, 0.496105, -13.0389)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(0.739561, 0, -0.67309, 0, 1, 0, 0.67309, 0, 0.739561, 0, 0.904236, 0)
@@ -289,5 +286,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, -22)
 
 [node name="block_gravel28" parent="walls" instance=ExtResource("6_jjve5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, -22)
+
+[node name="wall_doorway_scaffold" parent="." instance=ExtResource("6_eucco")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.5, 0, -13)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
