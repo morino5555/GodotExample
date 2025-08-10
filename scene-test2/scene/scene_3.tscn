@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://3nd7k22sd61w"]
+
+[ext_resource type="MeshLibrary" uid="uid://bcsd4yb83ukju" path="res://tiles/block_mesh.tres" id="1_20v1x"]
+[ext_resource type="Texture2D" uid="uid://bf3w6yesm36p" path="res://assets/textures/rocky_terrain_1k/textures/rocky_terrain_diff_1k.jpg" id="2_vrbmq"]
+[ext_resource type="Texture2D" uid="uid://cmv824kvm1itx" path="res://assets/textures/rocky_terrain_1k/textures/rocky_terrain_ao_1k.jpg" id="3_kh3rb"]
+[ext_resource type="Texture2D" uid="uid://jtvc3x5wifjk" path="res://assets/textures/rocky_terrain_1k/textures/rocky_terrain_nor_gl_1k.png" id="4_avt7v"]
+[ext_resource type="Texture2D" uid="uid://bpiatsoa4vtxx" path="res://assets/textures/rocky_terrain_1k/textures/rocky_terrain_rough_1k.png" id="5_62fes"]
+[ext_resource type="PackedScene" uid="uid://cgilg7a84xhr7" path="res://scene/base/tree_3_b.tscn" id="6_2xys2"]
+[ext_resource type="PackedScene" uid="uid://2r5pvgqoeae8" path="res://scene/base/tree_3_c.tscn" id="7_rvfrd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7es0y"]
+albedo_texture = ExtResource("2_vrbmq")
+roughness_texture = ExtResource("5_62fes")
+normal_enabled = true
+normal_scale = 3.11
+normal_texture = ExtResource("4_avt7v")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_kh3rb")
+uv1_scale = Vector3(5, 5, 5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_km3ni"]
+material = SubResource("StandardMaterial3D_7es0y")
+size = Vector2(30, 30)
+
+[node name="scene3" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_20v1x")
+data = {
+"cells": PackedInt32Array(0, 0, 1, 0, 65535, 1, 1, 65535, 1, 1, 0, 1, 2, 0, 1, 65536, 0, 1441796, 65537, 0, 1441793, 65538, 0, 1, 4, 0, 2, 3, 0, 2, -65536, 1, 1441798, -65535, 1, 1441798, -65534, 1, 1441798, -65533, 1, 1441798, -65532, 1, 1441798, -65532, 0, 1441798, -65533, 0, 1441798, -65534, 0, 1441798, -65535, 0, 1441798, -65536, 0, 1441798, -65536, 2, 1441798, -65535, 2, 1441798, -65534, 2, 1441798, -65533, 2, 1441798, -65532, 2, 1441798, 0, 2, 1441793, 1, 2, 1441793, 2, 2, 1441793, 65537, 1, 1376257, 65537, 2, 1376257, 65538, 1, 1376257, 65538, 2, 1376257, 65539, 0, 1310721, 65540, 0, 1310721, 65536, 65535, 1441799, 65536, 65534, 1441799)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="GridMap2" type="GridMap" parent="."]
+mesh_library = ExtResource("1_20v1x")
+data = {
+"cells": PackedInt32Array(65536, 0, 1441800, 65536, 65535, 1441800, 65536, 65533, 1441801, 65536, 65534, 1441801, 65537, 65533, 1441801, 131072, 65534, 1441801, 131071, 65533, 1441801)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.874, 0, -2.305)
+mesh = SubResource("PlaneMesh_km3ni")
+
+[node name="Tree_3_B" parent="." instance=ExtResource("6_2xys2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.037, 0, -4.777)
+
+[node name="Tree_3_C" parent="." instance=ExtResource("7_rvfrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.003, 0, -2.369)
