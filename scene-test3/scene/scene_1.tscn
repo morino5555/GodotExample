@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://d35bsqns0suce"]
+
+[ext_resource type="Texture2D" uid="uid://cyxp54bfi3xts" path="res://assets/textures/Dark/texture_01.png" id="1_pmvqc"]
+[ext_resource type="PackedScene" uid="uid://bmvecuy7hu7y8" path="res://barbarian/barbarian.tscn" id="2_cgmaq"]
+[ext_resource type="PackedScene" uid="uid://cdvm72berksth" path="res://objects/house_01_full.tscn" id="3_fen3a"]
+[ext_resource type="PackedScene" uid="uid://bt7yq2a7r44di" path="res://objects/tree_temp_climate_001.tscn" id="4_fkkpr"]
+[ext_resource type="PackedScene" uid="uid://sfhtook104al" path="res://objects/grass_007.tscn" id="5_eucco"]
+[ext_resource type="PackedScene" uid="uid://dc2na6k8cbuud" path="res://objects/grass_006.tscn" id="6_jjve5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cgmaq"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_cy6qo"]
+sky_material = SubResource("ProceduralSkyMaterial_cgmaq")
+
+[sub_resource type="Environment" id="Environment_fen3a"]
+background_mode = 2
+sky = SubResource("Sky_cy6qo")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgmaq"]
+albedo_texture = ExtResource("1_pmvqc")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cy6qo"]
+material = SubResource("StandardMaterial3D_cgmaq")
+size = Vector2(50, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cgmaq"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fen3a"]
+
+[node name="scene1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fen3a")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_cy6qo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_cgmaq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_fen3a")
+
+[node name="Barbarian" parent="." instance=ExtResource("2_cgmaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="House_01_full" parent="." instance=ExtResource("3_fen3a")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1, 0, 11)
+
+[node name="Tree_temp_climate_001" parent="." instance=ExtResource("4_fkkpr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -1)
+
+[node name="Grass_007" parent="." instance=ExtResource("5_eucco")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.60698, 0.00720705, 1.48542)
+
+[node name="Grass_008" parent="." instance=ExtResource("5_eucco")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.66732, 0.00720705, 0.895921)
+
+[node name="Grass_009" parent="." instance=ExtResource("5_eucco")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.22349, 0.00720705, 1.9603)
+
+[node name="Grass_010" parent="." instance=ExtResource("5_eucco")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.28383, 0.00720705, 1.3708)
+
+[node name="Grass_011" parent="." instance=ExtResource("5_eucco")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.78852, 0.00720705, 2.61776)
+
+[node name="Grass_012" parent="." instance=ExtResource("5_eucco")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.84886, 0.00720705, 2.02826)
+
+[node name="Grass_013" parent="." instance=ExtResource("5_eucco")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.65382, 0.00720705, 2.52507)
+
+[node name="Grass_014" parent="." instance=ExtResource("5_eucco")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.71416, 0.00720705, 1.93557)
+
+[node name="Grass_015" parent="." instance=ExtResource("5_eucco")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.99696, 0.00720717, 1.7305)
+
+[node name="Grass_016" parent="." instance=ExtResource("5_eucco")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.0573, 0.00720717, 1.14101)
+
+[node name="Grass_006" parent="." instance=ExtResource("6_jjve5")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2.59162, 0.0275314, 1.7442)

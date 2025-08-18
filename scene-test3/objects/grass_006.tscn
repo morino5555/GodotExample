@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc2na6k8cbuud"]
+
+[ext_resource type="PackedScene" uid="uid://bhdbptmlxr7eo" path="res://assets/free/grass/Grass_006.fbx" id="1_xnyos"]
+[ext_resource type="Texture2D" uid="uid://v23pwskxogsq" path="res://assets/free/grass/T_Grass.png" id="2_orgom"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8c34"]
+albedo_texture = ExtResource("2_orgom")
+
+[node name="Grass_006" type="Node3D"]
+
+[node name="Grass_006" parent="." instance=ExtResource("1_xnyos")]
+
+[node name="Grass_006" parent="Grass_006" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_v8c34")
+
+[editable path="Grass_006"]

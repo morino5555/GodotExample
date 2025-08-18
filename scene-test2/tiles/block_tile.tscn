@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://crhn45vm21yqp"]
+[gd_scene load_steps=12 format=3 uid="uid://crhn45vm21yqp"]
 
 [ext_resource type="PackedScene" uid="uid://dve32s0hxemmr" path="res://assets/block/dirt.gltf" id="1_v2hx5"]
 [ext_resource type="PackedScene" uid="uid://cue2pqfeixwrt" path="res://assets/block/bricks_A.gltf" id="2_lis3a"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ctrbrkba46m53" path="res://assets/block/tree.gltf" id="8_fe3ty"]
 [ext_resource type="PackedScene" uid="uid://bqmyjdg1up3jc" path="res://assets/forest/Tree_4_C_Color1.gltf" id="9_yiqox"]
 [ext_resource type="PackedScene" uid="uid://crttb0n2udbk5" path="res://assets/forest/Grass_2_C_Color1.gltf" id="10_b780q"]
+[ext_resource type="PackedScene" uid="uid://qn6u82cdvmer" path="res://assets/tst-grass.glb" id="11_b780q"]
 
 [node name="block_tile" type="Node"]
 
@@ -35,9 +36,12 @@ visible = false
 visible = false
 
 [node name="tree2" parent="." instance=ExtResource("8_fe3ty")]
+visible = false
 
 [node name="Tree_4_C_Color12" parent="." instance=ExtResource("9_yiqox")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 
 [node name="Grass_2_C_Color12" parent="." instance=ExtResource("10_b780q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+
+[node name="tst-grass" parent="." instance=ExtResource("11_b780q")]

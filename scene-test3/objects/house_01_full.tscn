@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdvm72berksth"]
+
+[ext_resource type="PackedScene" uid="uid://dlu1lkg5cbtie" path="res://assets/free/medieval_house/House_01_full.fbx" id="1_jt1ao"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_07osu"]
+size = Vector3(9, 8.46826, 7.62781)
+
+[node name="House_01_full" type="StaticBody3D"]
+
+[node name="House_01_full" parent="." instance=ExtResource("1_jt1ao")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.26587, 0.0194702)
+shape = SubResource("BoxShape3D_07osu")
