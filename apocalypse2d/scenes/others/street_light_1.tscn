@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjpv7vv36ir7b"]
+
+[ext_resource type="Texture2D" uid="uid://doeycq4v8vp1k" path="res://assets/apocalypse/Objects/Street-Light_1_Side.png" id="1_7isek"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0puen"]
+size = Vector2(6, 9)
+
+[node name="Street light 1" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Street-light1Side" type="Sprite2D" parent="."]
+texture = ExtResource("1_7isek")
+offset = Vector2(8.5, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_0puen")

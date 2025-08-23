@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0ghucfpefis8"]
+
+[ext_resource type="Texture2D" uid="uid://7oe8nh7rjrqy" path="res://assets/apocalypse/Objects/Vehicles/Rust/Car_4_Rust/Car_4_Rust_Red.png" id="1_ue3jd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ue3jd"]
+size = Vector2(29, 6)
+
+[node name="Car4RustRed" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Car4RustRed" type="Sprite2D" parent="."]
+texture = ExtResource("1_ue3jd")
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_ue3jd")

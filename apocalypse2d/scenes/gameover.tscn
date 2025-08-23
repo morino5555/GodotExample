@@ -1,0 +1,235 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmuyhy354c25o"]
+
+[ext_resource type="Script" uid="uid://0ivuy7b3td4w" path="res://scenes/gameover.gd" id="1_dy3ie"]
+[ext_resource type="FontFile" uid="uid://bdv63j8uyr1xu" path="res://assets/fonts/ThaleahFat.ttf" id="2_2mkfd"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ekxnf"]
+device = -1
+keycode = 81
+unicode = 113
+
+[sub_resource type="Shortcut" id="Shortcut_bqqt6"]
+events = [SubResource("InputEventKey_ekxnf")]
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_dy3ie")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.850203, 0.818835, 0.76031, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = -458.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_2mkfd")
+theme_override_font_sizes/normal_font_size = 200
+bbcode_enabled = true
+text = "[wave]game over"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(700, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -95.0
+offset_right = 350.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="upLine" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 13
+theme_override_constants/v_separation = 2
+columns = 5
+
+[node name="Label1" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "easy"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "day4"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "123,456"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 40
+text = "p"
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "easy"
+vertical_alignment = 1
+
+[node name="Label13" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "day4"
+vertical_alignment = 1
+
+[node name="Label14" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "123,456"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label15" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 40
+text = "p"
+vertical_alignment = 1
+
+[node name="Label21" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label22" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "easy"
+vertical_alignment = 1
+
+[node name="Label23" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "day4"
+vertical_alignment = 1
+
+[node name="Label24" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "123,456"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label25" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 40
+text = "p"
+vertical_alignment = 1
+
+[node name="bottomLine" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -470.0
+offset_top = 218.5
+offset_right = 470.0
+offset_bottom = 281.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="restartButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "restart"
+
+[node name="menuButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+text = "menu"
+
+[node name="quitButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 60
+shortcut = SubResource("Shortcut_bqqt6")
+text = "quit"
+
+[connection signal="pressed" from="HBoxContainer/restartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/menuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/quitButton" to="." method="_on_quit_button_pressed"]

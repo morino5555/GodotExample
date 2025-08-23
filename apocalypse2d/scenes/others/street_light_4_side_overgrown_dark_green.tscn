@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5qmlsa71oaci"]
+
+[ext_resource type="Texture2D" uid="uid://d30arhf5ltdo6" path="res://assets/apocalypse/Objects/Street-Light_4_Side_Overgrown_Dark-Green.png" id="1_n8gt0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8gt0"]
+size = Vector2(6, 8)
+
+[node name="Street-light4SideOvergrownDark-green" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Street-light4SideOvergrownDark-green" type="Sprite2D" parent="."]
+texture = ExtResource("1_n8gt0")
+offset = Vector2(8, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_n8gt0")

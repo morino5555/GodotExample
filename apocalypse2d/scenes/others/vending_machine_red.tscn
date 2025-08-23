@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwu6wfj3b1vsa"]
+
+[ext_resource type="Texture2D" uid="uid://cn2j4e36xkc5o" path="res://assets/apocalypse/Objects/Vending-machine_Red.png" id="1_ql0ih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odurt"]
+size = Vector2(14, 11)
+
+[node name="Vending machine Red" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Vending-machineRed" type="Sprite2D" parent="."]
+texture = ExtResource("1_ql0ih")
+offset = Vector2(0, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_odurt")

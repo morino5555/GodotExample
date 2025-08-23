@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvb6ygixcprtt"]
+
+[ext_resource type="Texture2D" uid="uid://c8mo47sng2ga2" path="res://assets/apocalypse/Objects/Vehicles/Rust/Car_2_Rust_Upsidedown/Car_2_Rust_Green_Upsidedown.png" id="1_t6256"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6256"]
+size = Vector2(15.7805, 34)
+
+[node name="Car2RustGreenUpsidedown" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Car2RustGreenUpsidedown" type="Sprite2D" parent="."]
+texture = ExtResource("1_t6256")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.55818, 0.280576)
+rotation = 0.259185
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_t6256")

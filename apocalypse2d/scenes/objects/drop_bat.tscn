@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4d581calykmv"]
+
+[ext_resource type="Texture2D" uid="uid://grr117dnso2v" path="res://assets/apocalypse/Objects/Pickable/Bat.png" id="1_c36p3"]
+[ext_resource type="Script" uid="uid://bfr8osw6x2u5p" path="res://scenes/objects/drop_base.gd" id="1_g5rm4"]
+[ext_resource type="Shader" uid="uid://cc5uwrw00k0sf" path="res://scenes/objects/drop_blink.gdshader" id="2_lwoyv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtv3o"]
+shader = ExtResource("2_lwoyv")
+shader_parameter/hit_opacity = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rm4"]
+size = Vector2(12, 12)
+
+[sub_resource type="Animation" id="Animation_lwoyv"]
+resource_name = "blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bat:material:shader_parameter/hit_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.3]
+}
+
+[sub_resource type="Animation" id="Animation_rtv3o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bat:material:shader_parameter/hit_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rxi0u"]
+_data = {
+&"RESET": SubResource("Animation_rtv3o"),
+&"blink": SubResource("Animation_lwoyv")
+}
+
+[node name="Drop_Bat" type="Area2D"]
+script = ExtResource("1_g5rm4")
+
+[node name="Bat" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_rtv3o")
+texture = ExtResource("1_c36p3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g5rm4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rxi0u")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://s3ylpq6pesab"]
+
+[ext_resource type="Texture2D" uid="uid://dcubntcmpnkt4" path="res://assets/apocalypse/Objects/Container/Container_10_Green_Vertical_Overgrown_Bleak-Yellow.png" id="1_2pf0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pf0a"]
+size = Vector2(23, 11)
+
+[node name="Container10GreenVerticalOvergrownBleak-yellow" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Container10GreenVerticalOvergrownBleak-yellow" type="Sprite2D" parent="."]
+texture = ExtResource("1_2pf0a")
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_2pf0a")

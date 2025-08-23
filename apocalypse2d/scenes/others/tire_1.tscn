@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://rbnkhnvv181n"]
+
+[ext_resource type="Texture2D" uid="uid://dc6fl2neovdoc" path="res://assets/apocalypse/Objects/Tire_1.png" id="1_8wxj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kklk4"]
+size = Vector2(12, 10)
+
+[node name="Tire 1" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Tire1" type="Sprite2D" parent="."]
+texture = ExtResource("1_8wxj3")
+offset = Vector2(0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_kklk4")
