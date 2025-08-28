@@ -83,11 +83,13 @@ func _attack():
 	if ray_cast_2d.is_colliding():
 		if ray_cast_2d.get_collider().name == "Player":
 			isAttack = true
+			ray_cast_2d.enabled = false
 
 			attack_collision.disabled = false
 			await get_tree().create_timer(0.8).timeout
 
 			isAttack = false
+			ray_cast_2d.enabled = true
 
 func get_damage(damage):
 	hp -= damage

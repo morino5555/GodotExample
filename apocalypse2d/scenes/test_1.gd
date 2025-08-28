@@ -140,10 +140,8 @@ func _on_player_destruction():
 
 func _save_score_data():
 	# saveDatas {"level":"easy", "day":"day10", "point":"500,000"},
-	# 100日から生存日数を引く
-	var day_point = 100 - day_score
-	# エネミーポイントに上の日数を掛けてスコアにする
-	var s_score = score * day_point
+	# スコアに日数の10倍を掛けてスコアにする
+	var s_score = score * ( day_score * 10)
 	var dataLine = {
 		"level" : stageName,
 		"day" : "day" + str(day_score),

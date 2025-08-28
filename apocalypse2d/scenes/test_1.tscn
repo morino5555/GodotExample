@@ -462,6 +462,7 @@ gradient_texture = ExtResource("13_tac73")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_fdfvv")
 volume_db = -3.0
+autoplay = true
 
 [node name="MiniMap" type="CanvasLayer" parent="."]
 
