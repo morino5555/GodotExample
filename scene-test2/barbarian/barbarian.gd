@@ -51,9 +51,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
 	)
 	if is_camera_motion:
+		# Mouse
 		#_camera_input_direction = event.screen_relative * mouse_sensitivity
 		_camera_input_direction.x = -event.relative.x * mouse_sensitivity
 		_camera_input_direction.y = -event.relative.y * mouse_sensitivity
+	#else :
+		# Controller Right Stick
+	#	_camera_input_direction.x = Input.get_action_strength("cam_right") - Input.get_action_strength("cam_left")
+	#	_camera_input_direction.y= Input.get_action_strength("cam_down") - Input.get_action_strength("cam_up")
 
 func _physics_process(delta: float) -> void:
 	camera_pivot.rotation.x += _camera_input_direction.y * delta

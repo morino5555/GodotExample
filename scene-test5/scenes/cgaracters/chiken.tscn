@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://biarc46g2de4b"]
+
+[ext_resource type="PackedScene" uid="uid://bmo3dkm1hymng" path="res://assets/AnimalQiwii/Animal Models/Chicken.fbx" id="1_0muub"]
+[ext_resource type="Script" uid="uid://g3b10n2hy8ix" path="res://scenes/cgaracters/chiken.gd" id="1_nlvv2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nlvv2"]
+radius = 0.619287
+
+[node name="Chiken" type="CharacterBody3D"]
+script = ExtResource("1_nlvv2")
+
+[node name="Chicken" parent="." instance=ExtResource("1_0muub")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Chicken_009" parent="Chicken" index="0"]
+transform = Transform3D(8.34465e-06, 70, 1.04308e-05, 2.08616e-06, -8.34465e-06, 70, 70, -4.17233e-06, 0, -0.0134698, 0.0146, 0.00111675)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.713572, 0)
+shape = SubResource("SphereShape3D_nlvv2")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.656059, 0.75471, 0, -0.75471, 0.656059, 0, 4.89, -2.535)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 2.98023e-08, 1, 0, -5.23589, 4.55149)
+
+[editable path="Chicken"]

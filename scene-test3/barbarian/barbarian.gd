@@ -18,6 +18,7 @@ extends CharacterBody3D
 @export var animation_tree: AnimationTree
 
 var _camera_input_direction := Vector2.ZERO
+var _camera_input_rightstick := Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
 var _gravity := -30.0
 
@@ -51,9 +52,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
 	)
 	if is_camera_motion:
+		# Mouse
 		#_camera_input_direction = event.screen_relative * mouse_sensitivity
 		_camera_input_direction.x = -event.relative.x * mouse_sensitivity
 		_camera_input_direction.y = -event.relative.y * mouse_sensitivity
+	else :
+		# Controller Right Stick
+		_camera_input_rightstick.x = -(Input.get_action_strength("cam_rs_right") - Input.get_action_strength("cam_rs_left"))
+		_camera_input_rightstick.y= -(Input.get_action_strength("cam_rs_down") - Input.get_action_strength("cam_rs_up"))
+		if abs(_camera_input_rightstick.x) == 1 and abs(_camera_input_rightstick.y) == 1:
+			_camera_input_rightstick = _camera_input_rightstick.normalized()
+			print("IF")
+		_camera_input_direction = _camera_input_rightstick * 5
 
 func _physics_process(delta: float) -> void:
 	camera_pivot.rotation.x += _camera_input_direction.y * delta
