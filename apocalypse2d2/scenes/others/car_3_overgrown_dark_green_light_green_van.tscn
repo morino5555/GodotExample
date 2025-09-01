@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5s117v6s4jb1"]
+
+[ext_resource type="Texture2D" uid="uid://dxoeo1jracfma" path="res://assets/apocalypse/Objects/Vehicles/Overgrown/Car_3_Overgrown_Van/Dark-Green/Car_3_Overgrown_Dark-Green_Light-Green_Van.png" id="1_shsqj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shsqj"]
+size = Vector2(32, 11)
+
+[node name="Car3OvergrownDark-greenLight-greenVan" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Car3OvergrownDark-greenLight-greenVan" type="Sprite2D" parent="."]
+texture = ExtResource("1_shsqj")
+offset = Vector2(0, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_shsqj")

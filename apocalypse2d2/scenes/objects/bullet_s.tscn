@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://duvftc68ucsvw"]
+
+[ext_resource type="Script" uid="uid://caonmshrwnhpl" path="res://scenes/objects/bullet_base.gd" id="1_dl1ft"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ywuvo"]
+radius = 3.0
+
+[node name="Bullet_S" type="Area2D" groups=["Bullet"]]
+collision_layer = 4
+collision_mask = 26
+script = ExtResource("1_dl1ft")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ywuvo")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.65297, -0.611265)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

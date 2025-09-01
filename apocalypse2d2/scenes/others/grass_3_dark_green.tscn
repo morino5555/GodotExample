@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://v5vng81x2uty"]
+
+[ext_resource type="Texture2D" uid="uid://dyh015cv6ku0i" path="res://assets/apocalypse/Objects/Nature/Dark-Green/Grass_3_Dark-Green.png" id="1_vs1dp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs1dp"]
+size = Vector2(10, 6)
+
+[node name="Grass3Dark-green" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Grass3Dark-green" type="Sprite2D" parent="."]
+texture = ExtResource("1_vs1dp")
+offset = Vector2(0, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vs1dp")

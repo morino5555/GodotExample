@@ -28,6 +28,10 @@ EventBus="*res://utils/event_bus.gd"
 gdscript/warnings/unused_signal=0
 gdscript/warnings/unused_class_variable=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/csg_terrain/plugin.cfg")
+
 [file_customization]
 
 folder_colors={

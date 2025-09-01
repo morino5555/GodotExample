@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://m8x2od7ahvmh"]
+
+[ext_resource type="Texture2D" uid="uid://b8xghgu667lkm" path="res://assets/apocalypse/Objects/Container/Container_6_Red_Vertical_Overgrown_Dark-Green.png" id="1_fkgvf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkgvf"]
+size = Vector2(20, 13)
+
+[node name="Container6RedVerticalOvergrownDark-green" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Container6RedVerticalOvergrownDark-green" type="Sprite2D" parent="."]
+texture = ExtResource("1_fkgvf")
+offset = Vector2(0, -13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_fkgvf")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://pj63wc7vr5bs"]
+
+[ext_resource type="Texture2D" uid="uid://d2tv3qlaeki75" path="res://assets/apocalypse/Objects/Nature/Dark-Green/Tree_2_Spruce-Sparse_Dark-Green.png" id="1_nbgqo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbgqo"]
+size = Vector2(10, 5)
+
+[node name="Tree2Spruce-sparseDark-green" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Tree2Spruce-sparseDark-green" type="Sprite2D" parent="."]
+texture = ExtResource("1_nbgqo")
+offset = Vector2(0, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_nbgqo")

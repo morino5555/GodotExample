@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2tp1vls4q0tf"]
+
+[ext_resource type="Texture2D" uid="uid://c5feunn7d7vjv" path="res://assets/apocalypse/Objects/Nature/Dark-Green/Tree_9_Small-oak_Dark-Green.png" id="1_0hpu2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hpu2"]
+size = Vector2(11, 8)
+
+[node name="Tree9Small-oakDark-green" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Tree9Small-oakDark-green" type="Sprite2D" parent="."]
+texture = ExtResource("1_0hpu2")
+offset = Vector2(0, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_0hpu2")

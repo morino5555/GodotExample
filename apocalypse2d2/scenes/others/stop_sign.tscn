@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://fsqpdtn10eew"]
+
+[ext_resource type="Texture2D" uid="uid://b6m46n7udf2su" path="res://assets/apocalypse/Objects/Stop-sign_Down_2_Overgrown_Bleak-Yellow.png" id="1_bh6in"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh6in"]
+size = Vector2(6, 3)
+
+[node name="Stop-sign" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Stop-signDown2OvergrownBleak-yellow" type="Sprite2D" parent="."]
+texture = ExtResource("1_bh6in")
+offset = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_bh6in")

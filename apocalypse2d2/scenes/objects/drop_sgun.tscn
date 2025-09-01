@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://crhexkyl4qj8x"]
+
+[ext_resource type="Script" uid="uid://bfr8osw6x2u5p" path="res://scenes/objects/drop_base.gd" id="1_0y431"]
+[ext_resource type="Texture2D" uid="uid://biim1u5yu08q2" path="res://assets/apocalypse/Objects/Pickable/Shotgun.png" id="1_isag2"]
+[ext_resource type="Shader" uid="uid://cc5uwrw00k0sf" path="res://scenes/objects/drop_blink.gdshader" id="2_umrd4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uggct"]
+shader = ExtResource("2_umrd4")
+shader_parameter/hit_opacity = 0.3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rm4"]
+size = Vector2(16, 12)
+
+[sub_resource type="Animation" id="Animation_umrd4"]
+resource_name = "blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shotgun:material:shader_parameter/hit_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.3]
+}
+
+[sub_resource type="Animation" id="Animation_uggct"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_osmcj"]
+_data = {
+&"RESET": SubResource("Animation_uggct"),
+&"blink": SubResource("Animation_umrd4")
+}
+
+[node name="Drop_Sgun" type="Area2D"]
+script = ExtResource("1_0y431")
+weapon_id = 3
+
+[node name="Shotgun" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_uggct")
+texture = ExtResource("1_isag2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g5rm4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_osmcj")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

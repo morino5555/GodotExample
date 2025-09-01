@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwpaagg3psjpp"]
+
+[ext_resource type="Texture2D" uid="uid://cnovjdtiiakov" path="res://assets/apocalypse/Objects/Nature/Dark-Green/Tree_8_Birch_Dark-Green.png" id="1_4d1po"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d1po"]
+size = Vector2(5, 5)
+
+[node name="Tree8BirchDark-green" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Tree8BirchDark-green" type="Sprite2D" parent="."]
+texture = ExtResource("1_4d1po")
+offset = Vector2(0, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_4d1po")
