@@ -1,0 +1,178 @@
+[gd_scene load_steps=22 format=3 uid="uid://du2ue87uugj2d"]
+
+[ext_resource type="Script" uid="uid://cok3gptb0ba64" path="res://scenes/fox/fox.gd" id="1_cmr24"]
+[ext_resource type="PackedScene" uid="uid://cpw4nmxjk427y" path="res://assets/fox/fox.glb" id="1_fh7y2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jaa0m"]
+radius = 0.405208
+height = 1.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cmr24"]
+radius = 0.1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jaa0m"]
+animation = &"Attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_46bbx"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tolq4"]
+animation = &"Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vemp1"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jxqej"]
+xfade_time = 0.2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cvi11"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_spswr"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6702g"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pgjlv"]
+xfade_time = 0.9
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3lwp7"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_46l0p"]
+xfade_time = 0.9
+advance_mode = 2
+advance_condition = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ye4ru"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rbbum"]
+xfade_time = 0.8
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4g33i"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sfg1d"]
+xfade_time = 0.8
+advance_mode = 2
+advance_condition = &"run"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_r1aym"]
+states/Attack/node = SubResource("AnimationNodeAnimation_jaa0m")
+states/Attack/position = Vector2(504, 278)
+states/Idle/node = SubResource("AnimationNodeAnimation_46bbx")
+states/Idle/position = Vector2(339, 100)
+states/Jump/node = SubResource("AnimationNodeAnimation_tolq4")
+states/Jump/position = Vector2(505, -19.0223)
+states/Run/node = SubResource("AnimationNodeAnimation_vemp1")
+states/Run/position = Vector2(504, 100)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_jxqej"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_cvi11"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_spswr"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_6702g"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_pgjlv"), "Run", "Attack", SubResource("AnimationNodeStateMachineTransition_3lwp7"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_46l0p"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_ye4ru"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_rbbum"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_4g33i"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_sfg1d")]
+graph_offset = Vector2(0, -107.022)
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_hmeia"]
+graph_offset = Vector2(71, 107)
+nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_r1aym")
+nodes/StateMachine/position = Vector2(260, 180)
+nodes/output/position = Vector2(620, 160)
+node_connections = [&"output", 0, &"StateMachine"]
+
+[node name="Fox" type="CharacterBody3D" node_paths=PackedStringArray("_skin", "animation_tree")]
+collision_layer = 2
+collision_mask = 15
+floor_block_on_wall = false
+script = ExtResource("1_cmr24")
+camera_path = NodePath("CameraPivot/SpringArm3D/Camera3D")
+_skin = NodePath("fox")
+animation_tree = NodePath("AnimationTree")
+
+[node name="fox" parent="." instance=ExtResource("1_fh7y2")]
+
+[node name="Skeleton3D" parent="fox/IdleDemo" index="0"]
+bones/0/position = Vector3(0.119656, 0.047334, -0.0173392)
+bones/0/rotation = Quaternion(0.248628, 0.661955, 0.661955, -0.248628)
+bones/1/position = Vector3(-1.36644e-05, 1.62423e-06, 3.24994e-05)
+bones/4/position = Vector3(2.04123e-09, 0.410667, -0.000192435)
+bones/4/rotation = Quaternion(0.105171, 0.114844, -0.0128024, 0.987718)
+bones/5/rotation = Quaternion(-0.0980021, -1.27782e-08, -1.30414e-08, 0.995186)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(-0.480191, 6.51802e-09, 1.1588e-08, 0.877164)
+bones/8/rotation = Quaternion(-0.63624, -0.134744, -0.265752, 0.711631)
+bones/9/rotation = Quaternion(-1.38839e-06, -2.27145e-07, -0.501471, 0.865175)
+bones/10/rotation = Quaternion(0.696681, 0.0541856, 0.31969, 0.63992)
+bones/11/position = Vector3(0.327701, -0.10667, -0.00418251)
+bones/11/rotation = Quaternion(-0.772789, -0.0902596, -0.0721544, 0.624055)
+bones/12/position = Vector3(0.291431, 0.000401005, -0.236535)
+bones/12/rotation = Quaternion(-0.772789, -0.0902596, -0.0721544, 0.624055)
+bones/14/rotation = Quaternion(-0.679862, 0.461983, 0.243438, 0.514876)
+bones/15/rotation = Quaternion(-1.9397e-06, 2.12126e-07, 0.490759, 0.871295)
+bones/16/position = Vector3(-0.358609, -0.0316247, 0.12855)
+bones/16/rotation = Quaternion(-0.772789, -0.0902596, -0.0721544, 0.624055)
+bones/17/position = Vector3(-0.285902, -0.138443, -0.16505)
+bones/17/rotation = Quaternion(-0.772789, -0.0902596, -0.0721544, 0.624055)
+bones/18/rotation = Quaternion(-0.772712, -2.52141e-09, -2.15586e-08, 0.634757)
+bones/19/rotation = Quaternion(0.08784, 8.85472e-10, 6.00973e-10, 0.996135)
+bones/20/rotation = Quaternion(0.222193, 3.61951e-09, 2.04764e-09, 0.975003)
+bones/21/rotation = Quaternion(0.190135, -7.83301e-10, -2.8399e-10, 0.981758)
+bones/22/position = Vector3(-8.17478e-10, -0.0291115, 0.00627533)
+bones/22/rotation = Quaternion(0.987717, 0.0128019, 0.114844, 0.105173)
+bones/22/scale = Vector3(0.963893, 0.963829, 0.963391)
+bones/23/rotation = Quaternion(-0.235539, -0.347844, -0.12373, 0.899009)
+bones/23/scale = Vector3(1.00015, 0.999976, 0.999842)
+bones/24/rotation = Quaternion(0.397934, 5.22988e-08, -1.61777e-07, 0.917414)
+bones/24/scale = Vector3(1, 0.999986, 1.00002)
+bones/25/rotation = Quaternion(-0.158325, 0.243556, 0.172244, 0.941247)
+bones/25/scale = Vector3(1.00008, 0.999967, 0.999928)
+bones/26/rotation = Quaternion(0.324848, -4.28529e-08, 1.32382e-07, 0.945766)
+bones/26/scale = Vector3(1, 0.99997, 1.00006)
+bones/27/position = Vector3(-0.163084, 0.047334, -0.0518649)
+bones/27/rotation = Quaternion(-0.141024, 0.692901, 0.692901, 0.141024)
+bones/28/position = Vector3(3.14415e-06, 3.76254e-07, 2.24113e-05)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("CapsuleShape3D_jaa0m")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, 2, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+shape = SubResource("SphereShape3D_cmr24")
+spring_length = 8.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+unique_name_in_owner = true
+fov = 60.0
+near = 0.5
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../fox")
+tree_root = SubResource("AnimationNodeBlendTree_hmeia")
+anim_player = NodePath("../fox/AnimationPlayer")
+parameters/StateMachine/conditions/attack = false
+parameters/StateMachine/conditions/idle = false
+parameters/StateMachine/conditions/jump = false
+parameters/StateMachine/conditions/run = false
+
+[editable path="fox"]

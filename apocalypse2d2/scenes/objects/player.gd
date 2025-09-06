@@ -50,14 +50,20 @@ func _physics_process(delta: float) -> void:
 
 func _move(delta: float) -> void:
 	var right_stick_input = Input.get_vector("rightstic_left",  "rightstic_right", "rightstic_up", "rightstic_down")
-	var movement = right_stick_input * Mouse_Sensitivity * delta
+	#var movement = right_stick_input * Mouse_Sensitivity * delta
+	var movement = right_stick_input * Mouse_Sensitivity
 
+	var new_mouse_position
 	if movement.length_squared() > 0: # Check if there's any input
-		var new_mouse_position = get_global_mouse_position() + movement
-		#Input.warp_mouse(new_mouse_position)
-		get_viewport().warp_mouse(new_mouse_position)
+		new_mouse_position = get_global_mouse_position() + movement
+		Input.warp_mouse(new_mouse_position)
+		#get_viewport().warp_mouse(new_mouse_position)
+		print("Stick")
+	else :
+		new_mouse_position = get_global_mouse_position()
 		
-	look_at(get_global_mouse_position())
+	#look_at(get_global_mouse_position())
+	look_at(new_mouse_position)
 	rotation_degrees = wrap(rotation_degrees, 0, 360)
 	if rotation_degrees > 90 and rotation_degrees < 270:
 		scale.y = -1

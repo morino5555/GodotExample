@@ -19,7 +19,7 @@ func _ready():
 	#var root = get_tree().root
 	#current_scene = root.get_child(-1)
 	# マウスカーソル非表示
-	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 	load_game()
 

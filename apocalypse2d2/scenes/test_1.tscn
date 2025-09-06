@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://7xghcl8c1oh0"]
+[gd_scene load_steps=43 format=4 uid="uid://7xghcl8c1oh0"]
 
 [ext_resource type="Script" uid="uid://brs3e555x2y3c" path="res://scenes/test_1.gd" id="1_3muqw"]
 [ext_resource type="TileSet" uid="uid://cqq21dmbi3cgu" path="res://assets/apocalypse/tile_set.tres" id="1_qm5my"]
@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://c5qmlsa71oaci" path="res://scenes/others/street_light_4_side_overgrown_dark_green.tscn" id="27_iv8e8"]
 [ext_resource type="PackedScene" uid="uid://csemoot3poeru" path="res://scenes/others/traffic_cone.tscn" id="28_jj4vc"]
 [ext_resource type="Script" uid="uid://dtf306kxf37pt" path="res://scenes/minimap_viewport.gd" id="39_14ath"]
+[ext_resource type="PackedScene" uid="uid://b7wir6v0viwtk" path="res://scenes/ui/hud.tscn" id="42_p8gpg"]
 
 [node name="test1" type="Node2D"]
 script = ExtResource("1_3muqw")
@@ -387,9 +388,6 @@ position = Vector2(877, 501)
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="Player" parent="Node2D" instance=ExtResource("2_b5onc")]
-position = Vector2(204, 37)
-
 [node name="Drop_Mgun" parent="Node2D" instance=ExtResource("4_q5oqk")]
 position = Vector2(105, 16)
 
@@ -444,6 +442,9 @@ position = Vector2(777, 327)
 [node name="Drop_Bat4" parent="Node2D" instance=ExtResource("7_x27jj")]
 position = Vector2(1095, 615)
 
+[node name="Player" parent="." instance=ExtResource("2_b5onc")]
+position = Vector2(204, 37)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
 
@@ -457,7 +458,6 @@ gradient_texture = ExtResource("13_tac73")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_fdfvv")
 volume_db = -3.0
-autoplay = true
 
 [node name="MiniMap" type="CanvasLayer" parent="."]
 
@@ -476,7 +476,7 @@ handle_input_locally = false
 size = Vector2i(200, 150)
 render_target_update_mode = 4
 script = ExtResource("39_14ath")
-player = NodePath("../../../Node2D/Player")
+player = NodePath("../../../Player")
 
 [node name="Camera2D" type="Camera2D" parent="MiniMap/SubViewportContainer/minimapViewport"]
 zoom = Vector2(0.4, 0.4)
@@ -487,5 +487,7 @@ points = PackedVector2Array(0, 1, 0, 153, 200, 153, 200, 1)
 closed = true
 width = 5.0
 default_color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Hud" parent="." instance=ExtResource("42_p8gpg")]
 
 [connection signal="timeout" from="Spawn/spawnTimer" to="." method="_on_spawn_timer_timeout"]

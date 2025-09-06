@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bam3pkyj20m72"]
+
+[ext_resource type="Script" uid="uid://deqgh4l8ry7yg" path="res://scenes/dungeon/key.gd" id="1_b5sbv"]
+[ext_resource type="PackedScene" uid="uid://cf1863mwfucxb" path="res://assets/kaykit/dungeon/key.gltf" id="1_htxrv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ygjrk"]
+radius = 1.16193
+
+[node name="key" type="Area3D"]
+collision_mask = 2
+script = ExtResource("1_b5sbv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.283489, 0, 0)
+shape = SubResource("SphereShape3D_ygjrk")
+
+[node name="key2" parent="." instance=ExtResource("1_htxrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.283489, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="key2"]

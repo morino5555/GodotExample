@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk2y5lgifp6o7"]
+
+[ext_resource type="Theme" uid="uid://cg33m0umsdbg0" path="res://assets/themes/global.tres" id="1"]
+[ext_resource type="Script" uid="uid://cp6flm5b2x465" path="res://scenes/ui/settings/action_binding_category_ui.gd" id="2"]
+
+[node name="ActionBindingCategoryUI" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+script = ExtResource("2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="SpacerControl" type="Control" parent="HBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

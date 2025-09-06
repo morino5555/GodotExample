@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://clgfjk554nr7"]
+
+[ext_resource type="PackedScene" uid="uid://gkjs0y538vhl" path="res://assets/kaykit/dungeon/floor_tile_large.gltf" id="1_w7xvc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w7xvc"]
+size = Vector3(4, 0.15, 4)
+
+[node name="floor_tile_large" type="StaticBody3D"]
+collision_mask = 15
+
+[node name="floor_tile_large2" parent="." instance=ExtResource("1_w7xvc")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0296326, 0)
+shape = SubResource("BoxShape3D_w7xvc")

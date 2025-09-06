@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnr3pfoly6fdc"]
+
+[ext_resource type="PackedScene" uid="uid://dieqphxxh4jxn" path="res://assets/kaykit/dungeon/floor_dirt_large.gltf" id="1_wihn3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wihn3"]
+size = Vector3(4, 0.119, 4)
+
+[node name="floor_dirt_large" type="StaticBody3D"]
+
+[node name="floor_dirt_large2" parent="." instance=ExtResource("1_wihn3")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0369888, 0)
+shape = SubResource("BoxShape3D_wihn3")

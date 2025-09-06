@@ -86,7 +86,7 @@ states/Walking/position = Vector2(372, 219)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_3bub4"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_ln5jd"), "Jump", "Walking", SubResource("AnimationNodeStateMachineTransition_j5kk5"), "Walking", "Idle", SubResource("AnimationNodeStateMachineTransition_vk5ys"), "Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_tdm22"), "Walking", "Jump", SubResource("AnimationNodeStateMachineTransition_hwh23"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_6e7d8"), "Idle", "2H_Attack_Chop", SubResource("AnimationNodeStateMachineTransition_2ohss"), "2H_Attack_Chop", "Idle", SubResource("AnimationNodeStateMachineTransition_dys8y"), "Walking", "2H_Attack_Chop", SubResource("AnimationNodeStateMachineTransition_j3sk6"), "2H_Attack_Chop", "Walking", SubResource("AnimationNodeStateMachineTransition_tan8y")]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dys8y"]
-graph_offset = Vector2(-12, 86)
+graph_offset = Vector2(-56.4042, 64.8512)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_2ohss")
 nodes/StateMachine/position = Vector2(60, 260)
 node_connections = [&"output", 0, &"StateMachine"]

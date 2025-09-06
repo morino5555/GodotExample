@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://4exhu7c133f8"]
+
+[ext_resource type="PackedScene" uid="uid://b3abf38gwi0ah" path="res://assets/Tree_2_A_Color1.gltf" id="1_f4cg3"]
+
+[node name="Tree_2_A_Color1" type="Node3D"]
+
+[node name="Tree_2_A_Color12" parent="." instance=ExtResource("1_f4cg3")]

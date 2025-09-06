@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpnmewxusmk4u"]
+
+[ext_resource type="PackedScene" uid="uid://d0pgwjdnt5qrx" path="res://assets/kaykit/dungeon/box_small.gltf" id="1_1tuqk"]
+[ext_resource type="Script" uid="uid://yktosis6uc5s" path="res://scenes/dungeon/move_box_small.gd" id="1_h084d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1tuqk"]
+
+[node name="move_box_small" type="CharacterBody3D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_h084d")
+
+[node name="box_small2" parent="." instance=ExtResource("1_1tuqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("BoxShape3D_1tuqk")

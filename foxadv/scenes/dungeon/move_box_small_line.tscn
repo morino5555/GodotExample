@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://4vi1prwfpbp"]
+
+[node name="move_box_small_line" type="Node3D"]
+metadata/_edit_group_ = true
+
+[node name="left" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0, 3.35)
+collision_layer = 8
+collision_mask = 8
+size = Vector3(0.2, 0.1, 5.3)
+
+[node name="right" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 3.35)
+collision_layer = 8
+collision_mask = 8
+size = Vector3(0.2, 0.1, 5.3)
+
+[node name="box" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 8
+collision_mask = 9
+size = Vector3(1.4, 0.1, 1.4)
