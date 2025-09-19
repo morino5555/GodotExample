@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cleaki1p5oxjk"]
+
+[ext_resource type="PackedScene" uid="uid://cmjg8oxuunqql" path="res://assets/kenney/nature/path_stoneCircle.glb" id="1_37h18"]
+
+[node name="path_stoneCircle" instance=ExtResource("1_37h18")]

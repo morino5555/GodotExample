@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxaxqpc5bo2r1"]
+
+[ext_resource type="PackedScene" uid="uid://ddswcue3qtt75" path="res://assets/kaykit/medieval/builing-blue/building_archeryrange_blue.gltf" id="1_xiytf"]
+
+[node name="building_archeryrange_blue" instance=ExtResource("1_xiytf")]

@@ -37,4 +37,3 @@ func _on_Settingsbtn_pressed():
 	for c in _to_show_hide:
 		c.visible = true
 	_resume_btn.grab_focus()
-

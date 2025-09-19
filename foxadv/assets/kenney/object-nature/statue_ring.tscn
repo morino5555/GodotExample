@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd5yeha2fabdh"]
+
+[ext_resource type="PackedScene" uid="uid://bocx5531npdwe" path="res://assets/kenney/nature/statue_ring.glb" id="1_di7u7"]
+
+[node name="statue_ring" instance=ExtResource("1_di7u7")]

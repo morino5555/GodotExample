@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Fox Adventure"
-run/main_scene="res://scenes/etc/title.tscn"
+run/main_scene="uid://b5d7budoq2kjo"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.png"
 

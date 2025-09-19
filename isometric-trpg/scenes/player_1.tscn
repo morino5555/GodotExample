@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bre7ibnw3ptgc"]
+
+[ext_resource type="Script" uid="uid://ks4ydr11ibhn" path="res://scenes/player_1.gd" id="1_gneq0"]
+[ext_resource type="Texture2D" uid="uid://cq8atmj7y18iu" path="res://assets/trpg-assets/IsometricTRPGAssetPack_OutlinedEntities.png" id="1_rfmnd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gneq0"]
+atlas = ExtResource("1_rfmnd")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7tsm"]
+atlas = ExtResource("1_rfmnd")
+region = Rect2(16, 0, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vod78"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gneq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7tsm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f7tsm"]
+radius = 2.06155
+
+[node name="Player1" type="CharacterBody2D"]
+script = ExtResource("1_gneq0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vod78")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4)
+shape = SubResource("CircleShape2D_f7tsm")

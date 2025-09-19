@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwkwi13ytsjfj"]
+
+[ext_resource type="Script" uid="uid://dfl6dv21qfqoh" path="res://scenes/object/cave_thorns_1.gd" id="1_flgvb"]
+[ext_resource type="Texture2D" uid="uid://d1atip1s8f8qg" path="res://assets/rotting/cave/cave-platformer-tileset-16x16.png" id="1_hpu4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flgvb"]
+size = Vector2(10, 9)
+
+[node name="CaveThorns1" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_flgvb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hpu4i")
+offset = Vector2(0, -5)
+region_enabled = true
+region_rect = Rect2(97, 166, 15, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_flgvb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

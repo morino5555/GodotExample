@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://odaowv810dpj"]
+
+[ext_resource type="PackedScene" uid="uid://du6ctgmypbffq" path="res://assets/kenney/nature/tent_detailedOpen.glb" id="1_oborx"]
+
+[node name="tent_detailedOpen" instance=ExtResource("1_oborx")]

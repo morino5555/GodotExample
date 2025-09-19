@@ -34,7 +34,7 @@ var arm_max = 10.0
 var arm_interval = 0.1
 
 @onready var camera_pivot: Node3D = %CameraPivot
-@onready var spring_arm: SpringArm3D = %SpringArm3D
+#@onready var spring_arm: SpringArm3D = %SpringArm3D
 @onready var camera_3d: Camera3D = %Camera3D
 #@onready var _skin: Node3D = $BarbarianModel
 #@onready var animation_tree: AnimationTree = $AnimationTree
@@ -48,6 +48,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		# マウスカーソル表示
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#$damageIndcator.create_Indicator_label(randi_range(-50,50))
 
 func _unhandled_input(event: InputEvent) -> void:
 	# マウスが有効？の判定
@@ -75,10 +76,10 @@ func _physics_process(_delta: float) -> void:
 	camera_pivot.rotation.x = clamp(camera_pivot.rotation.x, camera_min, camera_max)
 	camera_pivot.rotation.y += _camera_input_direction.x * _delta
 
-	if Input.is_action_pressed("cam_zoom_in") and spring_arm.spring_length > arm_min:
-		spring_arm.spring_length -= arm_interval
-	if Input.is_action_pressed("cam_zoom_out") and spring_arm.spring_length <arm_max:
-		spring_arm.spring_length += arm_interval
+	#if Input.is_action_pressed("cam_zoom_in") and spring_arm.spring_length > arm_min:
+	#	spring_arm.spring_length -= arm_interval
+	#if Input.is_action_pressed("cam_zoom_out") and spring_arm.spring_length <arm_max:
+	#	spring_arm.spring_length += arm_interval
 
 	_camera_input_direction = Vector2.ZERO
 	
@@ -121,6 +122,7 @@ func _physics_process(_delta: float) -> void:
 func _attack(_delta: float):
 	if Input.is_action_pressed("attack"):
 		state_machine.travel("Attack")
+		$damageIndcator.create_Indicator_label(randi_range(-50,50))
 
 func _push_object():
 	var lastCollision = get_last_slide_collision()

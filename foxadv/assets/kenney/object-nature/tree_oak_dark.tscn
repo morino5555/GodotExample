@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://xpubocce1aj"]
+
+[ext_resource type="PackedScene" uid="uid://bpaadaa88wndf" path="res://assets/kenney/nature/tree_oak_dark.glb" id="1_703fc"]
+
+[node name="tree_oak_dark" instance=ExtResource("1_703fc")]

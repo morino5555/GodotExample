@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dblya3pc5cd7p"]
+
+[ext_resource type="PackedScene" uid="uid://b4r7ds5pmoytx" path="res://assets/kenney/nature/sign.glb" id="1_wuokr"]
+
+[node name="sign" instance=ExtResource("1_wuokr")]

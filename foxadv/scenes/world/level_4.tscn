@@ -1,3 +1,344 @@
-[gd_scene format=3 uid="uid://b8acj3ty50vbb"]
+[gd_scene load_steps=38 format=3 uid="uid://b8acj3ty50vbb"]
+
+[ext_resource type="Texture2D" uid="uid://dtx5b48htnptq" path="res://assets/texture/texture_01.png" id="1_qj7w2"]
+[ext_resource type="MeshLibrary" uid="uid://dmsx2t6xv7fgd" path="res://assets/kenney/gridtile/nature-tile.tres" id="3_v3ehs"]
+[ext_resource type="PackedScene" uid="uid://odaowv810dpj" path="res://assets/kenney/object-nature/tent_detailed_open.tscn" id="4_ndkl0"]
+[ext_resource type="PackedScene" uid="uid://bsa4i2llyhe70" path="res://assets/kenney/object-nature/tree_small_dark.tscn" id="5_m3qwe"]
+[ext_resource type="PackedScene" uid="uid://70txccmcrsfu" path="res://assets/kenney/object-nature/tree_thin_dark.tscn" id="6_o0xsq"]
+[ext_resource type="PackedScene" uid="uid://bbd3rmg87uwtv" path="res://assets/kenney/object-nature/tree_plateau_dark.tscn" id="7_waghf"]
+[ext_resource type="PackedScene" uid="uid://cd5yeha2fabdh" path="res://assets/kenney/object-nature/statue_ring.tscn" id="8_w2yj2"]
+[ext_resource type="PackedScene" uid="uid://d2p6iht7n3aw4" path="res://assets/kenney/object-nature/statue_obelisk.tscn" id="9_gmilg"]
+[ext_resource type="PackedScene" uid="uid://baltrmajcc16v" path="res://assets/kenney/object-nature/plant_bush.tscn" id="10_iw6d2"]
+[ext_resource type="PackedScene" uid="uid://de1njx6csdy2y" path="res://assets/kenney/object-nature/plant_bush_detailed.tscn" id="11_xqj2q"]
+[ext_resource type="PackedScene" uid="uid://cidmfmee7epai" path="res://assets/kenney/object-nature/campfire_stones.tscn" id="12_i2txq"]
+[ext_resource type="PackedScene" uid="uid://b7xs62dh3eah7" path="res://assets/kenney/object-nature/path_stone.tscn" id="13_fgrl7"]
+[ext_resource type="PackedScene" uid="uid://xpubocce1aj" path="res://assets/kenney/object-nature/tree_oak_dark.tscn" id="14_gmilg"]
+[ext_resource type="PackedScene" uid="uid://bvjh1a4ehh6a1" path="res://scenes/fox/fox_45.tscn" id="14_iw6d2"]
+[ext_resource type="PackedScene" uid="uid://bxaxqpc5bo2r1" path="res://assets/kaykit/object-medieval/building_archeryrange_blue.tscn" id="15_dw73j"]
+[ext_resource type="PackedScene" uid="uid://cb478csc13w3b" path="res://assets/kaykit/object-medieval/building_barracks_blue.tscn" id="16_0m600"]
+[ext_resource type="PackedScene" uid="uid://j7see25ka3wg" path="res://assets/kaykit/object-medieval/building_blacksmith_blue.tscn" id="17_f53r2"]
+[ext_resource type="PackedScene" uid="uid://cowkprjjhvsv" path="res://assets/kaykit/object-medieval/building_castle_blue.tscn" id="18_kp87m"]
+[ext_resource type="PackedScene" uid="uid://dt1w130go8081" path="res://assets/kaykit/object-medieval/building_church_blue.tscn" id="19_oj5jk"]
+[ext_resource type="PackedScene" uid="uid://41w2rp4m2g31" path="res://assets/kaykit/object-medieval/building_home_a_blue.tscn" id="20_hug7g"]
+[ext_resource type="PackedScene" uid="uid://c7mt2867tlana" path="res://assets/kaykit/object-medieval/building_home_b_blue.tscn" id="21_54a44"]
+[ext_resource type="PackedScene" uid="uid://dr3j6rln4g2yf" path="res://assets/kaykit/object-medieval/building_market_blue.tscn" id="22_gq5ri"]
+[ext_resource type="PackedScene" uid="uid://jnmldepx0o2p" path="res://assets/kaykit/object-medieval/building_tower_b_blue.tscn" id="23_8lrlv"]
+[ext_resource type="PackedScene" uid="uid://cl87vvrv87sdx" path="res://assets/kaykit/object-medieval/building_tower_catapult_blue.tscn" id="24_jjws1"]
+[ext_resource type="PackedScene" uid="uid://ci037q8fmyu6d" path="res://assets/kaykit/object-medieval/building_watermill_blue.tscn" id="25_v5vvx"]
+[ext_resource type="PackedScene" uid="uid://cbwp48mbvxqiw" path="res://assets/kaykit/object-medieval/building_well_blue.tscn" id="26_pcboo"]
+[ext_resource type="PackedScene" uid="uid://djs4hw5x2lt4p" path="res://assets/kaykit/object-medieval/building_windmill_blue.tscn" id="27_6b5eb"]
+[ext_resource type="PackedScene" uid="uid://2e6mf4b7piw7" path="res://assets/kaykit/object-medieval/building_lumbermill_blue.tscn" id="28_51pyv"]
+[ext_resource type="PackedScene" uid="uid://b16m6e5gn88qo" path="res://assets/kaykit/object-medieval/building_tavern_blue.tscn" id="29_ufvow"]
+[ext_resource type="PackedScene" uid="uid://imyjg45evuhd" path="res://assets/kaykit/object-medieval/wall_straight.tscn" id="30_v5vvx"]
+[ext_resource type="PackedScene" uid="uid://66aldrakifed" path="res://assets/kaykit/object-medieval/wall_straight_gate.tscn" id="31_pcboo"]
+[ext_resource type="PackedScene" uid="uid://cxwcny6sg4bh2" path="res://assets/kaykit/object-medieval/wall_corner_b_outside.tscn" id="32_6b5eb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ndkl0"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_12xnv"]
+sky_material = SubResource("ProceduralSkyMaterial_ndkl0")
+
+[sub_resource type="Environment" id="Environment_xlc2a"]
+background_mode = 2
+sky = SubResource("Sky_12xnv")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_energy = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3ehs"]
+albedo_texture = ExtResource("1_qj7w2")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndkl0"]
+albedo_texture = ExtResource("1_qj7w2")
+uv1_scale = Vector3(3, 50, 3)
 
 [node name="Level4" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xlc2a")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.367079, 0.838836, -0.402003, 0.0262288, 0.441336, 0.896959, 0.92982, 0.31871, -0.184007, -19.9692, 11.0627, -18.4989)
+light_color = Color(0.935544, 0.732641, 0.424306, 1)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+collision_mask = 15
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_v3ehs")
+
+[node name="Nature" type="GridMap" parent="."]
+mesh_library = ExtResource("3_v3ehs")
+cell_size = Vector3(3, 3, 3)
+cell_center_y = false
+collision_mask = 15
+data = {
+"cells": PackedInt32Array(0, 65535, 1, 65535, 65535, 1, 1, 65535, 1, 2, 65535, 1, 65534, 65535, 1, 65536, 0, 1, 131071, 0, 1, 131070, 0, 1, 65533, 65535, 1, 65532, 65535, 1, 65531, 65535, 1, 3, 65535, 1, 4, 65535, 1, 5, 65535, 1, 7, 65535, 1, 6, 65535, 1, 65529, 65535, 1, 65530, 65535, 1, 131069, 0, 1, 131068, 0, 1, 131067, 0, 1, 131066, 0, 1, 131065, 0, 1, 7, 0, 1, 6, 0, 1, 5, 0, 1, 4, 0, 1, 3, 0, 1, 2, 0, 1, 1, 0, 1, 0, 0, 1, 65535, 0, 1, 65534, 0, 1, 65535, 65534, 17, 65534, 65534, 17, 65533, 65534, 17, 65532, 65534, 17, 65531, 65534, 17, 65530, 65534, 17, 65529, 65534, 17, 1, 65534, 17, 2, 65534, 17, 3, 65534, 17, 4, 65534, 17, 5, 65534, 17, 65536, 65535, 17, 131071, 65535, 17, 131070, 65535, 17, 131069, 65535, 17, 131068, 65535, 17, 131067, 65535, 17, 131066, 65535, 17, 131065, 65535, 5, 65536, 1, 1, 131071, 1, 1, 131070, 1, 1, 131069, 1, 1, 131068, 1, 1, 131067, 1, 1, 131066, 1, 1, 131065, 1, 1, 131065, 2, 1, 131066, 2, 1, 131067, 2, 1, 131068, 2, 1, 131069, 2, 1, 131070, 2, 1, 131071, 2, 1, 65536, 2, 1, 65536, 3, 1, 131071, 3, 1, 131070, 3, 1, 131069, 3, 1, 131068, 3, 1, 131067, 3, 1, 131066, 3, 1, 131065, 3, 1, 131065, 4, 1, 131066, 4, 1, 131067, 4, 1, 131068, 4, 1, 131069, 4, 1, 131070, 4, 1, 131071, 4, 1, 65536, 4, 1, 65536, 5, 1, 131071, 5, 1, 131070, 5, 1, 131069, 5, 1, 131068, 5, 1, 131067, 5, 1, 131066, 5, 1, 131065, 5, 1, 196601, 4, 1, 196602, 4, 1, 196603, 4, 1, 196604, 4, 1, 196605, 4, 1, 196606, 4, 1, 196606, 5, 1, 196605, 5, 1, 196604, 5, 1, 196603, 5, 1, 196602, 5, 1, 196601, 5, 1, 196606, 6, 1, 196605, 6, 1, 196604, 6, 1, 196603, 6, 1, 196602, 6, 1, 196601, 6, 1, 196601, 7, 1, 196602, 7, 1, 196603, 7, 1, 196604, 7, 1, 196605, 7, 1, 196606, 7, 1, 196606, 8, 1, 196605, 8, 1, 196604, 8, 1, 196603, 8, 1, 196602, 8, 1, 196601, 8, 1, 196601, 9, 1, 196602, 9, 1, 196603, 9, 1, 196604, 9, 1, 196605, 9, 1, 196606, 9, 1, 262142, 9, 1, 262141, 9, 1, 262140, 9, 1, 262139, 9, 1, 262138, 9, 1, 262137, 9, 1, 262137, 8, 1, 262138, 8, 1, 262139, 8, 1, 262140, 8, 1, 262140, 7, 1, 262139, 7, 1, 262138, 7, 1, 262137, 7, 1, 327676, 9, 1, 327675, 9, 1, 327674, 9, 1, 327673, 9, 1, 327673, 8, 1, 327674, 8, 1, 327675, 8, 1, 327676, 8, 1, 393209, 9, 1, 393210, 9, 1, 393210, 10, 1, 393209, 10, 655379, 327676, 10, 1, 327675, 10, 1, 327674, 10, 1, 327673, 10, 1, 327673, 11, 1, 327674, 11, 1, 327675, 11, 1, 327676, 11, 1, 327677, 11, 1, 327677, 10, 1, 327678, 10, 1, 327678, 11, 1, 262143, 9, 1, 262143, 8, 1, 262143, 7, 1, 196607, 6, 1, 196607, 7, 1, 196607, 8, 1, 196607, 9, 1, 196607, 5, 1, 196601, 3, 16, 196602, 3, 16, 196603, 3, 16, 196604, 3, 16, 196606, 3, 16, 131072, 5, 4, 131072, 6, 1, 196608, 6, 1048580, 262137, 6, 16, 262138, 6, 16, 262139, 6, 16, 262140, 6, 16, 262142, 8, 1048580, 262142, 7, 1048595, 262143, 6, 19, 196607, 4, 4, 262141, 8, 4, 327677, 9, 4, 327678, 9, 19, 327673, 7, 19, 327674, 7, 19, 327675, 7, 19, 327676, 7, 19, 327679, 9, 19, 393209, 8, 19, 393210, 8, 19, 393211, 9, 1441811, 393211, 10, 1441811, 393210, 11, 655379)
+}
+metadata/_editor_floor_ = Vector3(0, 5, 0)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="tent_detailedOpen" parent="Node3D" instance=ExtResource("4_ndkl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07818, 0, -7.43944)
+
+[node name="tree_small_dark" parent="Node3D" instance=ExtResource("5_m3qwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6683, 6.15, -0.624773)
+
+[node name="tree_small_dark2" parent="Node3D" instance=ExtResource("5_m3qwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.739, 6.15, -1.53763)
+
+[node name="tree_small_dark3" parent="Node3D" instance=ExtResource("5_m3qwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6628, 6.15, -2.4047)
+
+[node name="tree_thin_dark" parent="Node3D" instance=ExtResource("6_o0xsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.98203, 0.15, -17.7686)
+
+[node name="tree_thin_dark2" parent="Node3D" instance=ExtResource("6_o0xsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.98203, 0.15, -10.7686)
+
+[node name="tree_thin_dark3" parent="Node3D" instance=ExtResource("6_o0xsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.982, 0.15, -11.7686)
+
+[node name="tree_plateau_dark" parent="Node3D" instance=ExtResource("7_waghf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.04668, 0.15, -15.4035)
+
+[node name="tree_plateau_dark2" parent="Node3D" instance=ExtResource("7_waghf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.04668, 0.15, -10.4035)
+
+[node name="statue_ring" parent="Node3D" instance=ExtResource("8_w2yj2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.26, 0, -13.477)
+
+[node name="statue_obelisk" parent="Node3D" instance=ExtResource("9_gmilg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02198, 0.15, -14.9872)
+
+[node name="statue_obelisk2" parent="Node3D" instance=ExtResource("9_gmilg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02198, 0.15, -11.9872)
+
+[node name="plant_bush" parent="Node3D" instance=ExtResource("10_iw6d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -16)
+
+[node name="plant_bush3" parent="Node3D" instance=ExtResource("10_iw6d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -17)
+
+[node name="plant_bush4" parent="Node3D" instance=ExtResource("10_iw6d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -14)
+
+[node name="plant_bush5" parent="Node3D" instance=ExtResource("10_iw6d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -10)
+
+[node name="plant_bush2" parent="Node3D" instance=ExtResource("10_iw6d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -16)
+
+[node name="plant_bushDetailed" parent="Node3D" instance=ExtResource("11_xqj2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -15)
+
+[node name="plant_bushDetailed3" parent="Node3D" instance=ExtResource("11_xqj2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 6, 7)
+
+[node name="plant_bushDetailed4" parent="Node3D" instance=ExtResource("11_xqj2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 6, 6)
+
+[node name="plant_bushDetailed5" parent="Node3D" instance=ExtResource("11_xqj2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 6, 7)
+
+[node name="plant_bushDetailed6" parent="Node3D" instance=ExtResource("11_xqj2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 6, 6)
+
+[node name="plant_bushDetailed7" parent="Node3D" instance=ExtResource("11_xqj2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 6, 5)
+
+[node name="plant_bushDetailed2" parent="Node3D" instance=ExtResource("11_xqj2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -11)
+
+[node name="campfire_stones" parent="Node3D" instance=ExtResource("12_i2txq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60632, 0, -9.38439)
+
+[node name="path_stone" parent="Node3D" instance=ExtResource("13_fgrl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.93389, 0.15, -13.5031)
+
+[node name="path_stone2" parent="Node3D" instance=ExtResource("13_fgrl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.61141, 0.15, -11.7799)
+
+[node name="path_stone3" parent="Node3D" instance=ExtResource("13_fgrl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12307, 0.15, -15.4246)
+
+[node name="tree_oak_dark" parent="Node3D" instance=ExtResource("14_gmilg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, 11)
+
+[node name="tree_oak_dark2" parent="Node3D" instance=ExtResource("14_gmilg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6, 9)
+
+[node name="tree_small_dark4" parent="Node3D" instance=ExtResource("5_m3qwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 6, 7)
+
+[node name="tree_small_dark5" parent="Node3D" instance=ExtResource("5_m3qwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 6, 5)
+
+[node name="tree_small_dark6" parent="Node3D" instance=ExtResource("5_m3qwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 6, 6)
+
+[node name="tree_thin_dark4" parent="Node3D" instance=ExtResource("6_o0xsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 6, 6)
+
+[node name="plant_bushDetailed8" parent="Node3D" instance=ExtResource("11_xqj2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 9, 16)
+
+[node name="plant_bushDetailed9" parent="Node3D" instance=ExtResource("11_xqj2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 9, 16)
+
+[node name="plant_bushDetailed10" parent="Node3D" instance=ExtResource("11_xqj2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 9, 14)
+
+[node name="tree_oak_dark3" parent="Node3D" instance=ExtResource("14_gmilg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 18, 31)
+
+[node name="tree_oak_dark4" parent="Node3D" instance=ExtResource("14_gmilg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 18, 30)
+
+[node name="tree_oak_dark5" parent="Node3D" instance=ExtResource("14_gmilg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 18, 28)
+
+[node name="tree_plateau_dark3" parent="Node3D" instance=ExtResource("7_waghf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 15, 34)
+
+[node name="tree_plateau_dark4" parent="Node3D" instance=ExtResource("7_waghf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 15, 34)
+
+[node name="tree_small_dark7" parent="Node3D" instance=ExtResource("5_m3qwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 15, 33)
+
+[node name="plant_bush6" parent="Node3D" instance=ExtResource("10_iw6d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 12, 28)
+
+[node name="plant_bush7" parent="Node3D" instance=ExtResource("10_iw6d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 12, 29)
+
+[node name="plant_bush8" parent="Node3D" instance=ExtResource("10_iw6d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 12, 29)
+
+[node name="plant_bush9" parent="Node3D" instance=ExtResource("10_iw6d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 12, 27)
+
+[node name="Slope1" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, -4)
+use_collision = true
+polygon = PackedVector2Array(-5, -1, 0, 2, 1, 2, 1, -1)
+depth = 3.0
+material = SubResource("StandardMaterial3D_ndkl0")
+
+[node name="Slope4" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9, 10, 26)
+use_collision = true
+polygon = PackedVector2Array(-10, -1, -4, 2, 1, 2, 1, -1)
+depth = 6.0
+material = SubResource("StandardMaterial3D_ndkl0")
+
+[node name="lope3" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9, 7, 11)
+use_collision = true
+polygon = PackedVector2Array(-5, -1, 0, 2, 1, 2, 1, -1)
+depth = 3.0
+material = SubResource("StandardMaterial3D_ndkl0")
+
+[node name="Slope2" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20, 4, -3)
+use_collision = true
+polygon = PackedVector2Array(-10, -1, -3, 2, 1, 2, 1, -1)
+depth = 3.0
+material = SubResource("StandardMaterial3D_ndkl0")
+
+[node name="Wall1-1" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 1, -4)
+visible = false
+use_collision = true
+polygon = PackedVector2Array(-5, -1, -5, 1, 1, 4, 1, 2)
+depth = 0.2
+
+[node name="Wall2-2" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, -4)
+visible = false
+use_collision = true
+polygon = PackedVector2Array(-5, -1, -5, 1, 1, 4, 1, 2)
+depth = 0.2
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1203, 3.62307, -3)
+visible = false
+use_collision = true
+size = Vector3(20, 1, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4916, 3.51648, -3)
+visible = false
+use_collision = true
+size = Vector3(20, 1, 0.2)
+
+[node name="Fox45" parent="." instance=ExtResource("14_iw6d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06613, 0.0326896, -15.614)
+
+[node name="Node3D2" type="Node3D" parent="."]
+visible = false
+
+[node name="building_market_blue" parent="Node3D2" instance=ExtResource("22_gq5ri")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 35, 0, 13)
+
+[node name="building_tower_B_blue" parent="Node3D2" instance=ExtResource("23_8lrlv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 21)
+
+[node name="building_tower_catapult_blue" parent="Node3D2" instance=ExtResource("24_jjws1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5604, -1.90735e-06, 23.2842)
+
+[node name="building_watermill_blue" parent="Node3D2" instance=ExtResource("25_v5vvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.6262, 2.8, 7.04773)
+
+[node name="building_well_blue" parent="Node3D2" instance=ExtResource("26_pcboo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1738, 1.28925e-05, -23.1999)
+
+[node name="building_windmill_blue" parent="Node3D2" instance=ExtResource("27_6b5eb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12871, 0.000112026, -22.8438)
+
+[node name="building_lumbermill_blue" parent="Node3D2" instance=ExtResource("28_51pyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.645, 0.0280272, 27.3515)
+
+[node name="building_tavern_blue" parent="Node3D2" instance=ExtResource("29_ufvow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.944, 2.08855e-05, -0.91222)
+
+[node name="wall_straight" parent="Node3D2" instance=ExtResource("30_v5vvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 40)
+
+[node name="wall_straight_gate" parent="Node3D2" instance=ExtResource("31_pcboo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 40)
+
+[node name="wall_straight2" parent="Node3D2" instance=ExtResource("30_v5vvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 40)
+
+[node name="wall_corner_B_outside" parent="Node3D2" instance=ExtResource("32_6b5eb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 40)
+
+[node name="building_barracks_blue" parent="Node3D2" instance=ExtResource("16_0m600")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1327, 0, -34.3005)
+
+[node name="building_blacksmith_blue" parent="Node3D2" instance=ExtResource("17_f53r2")]
+transform = Transform3D(-0.197999, 0, 0.980202, 0, 1, 0, -0.980202, 0, -0.197999, 11.566, 0.0408225, -39.9661)
+
+[node name="building_castle_blue" parent="Node3D2" instance=ExtResource("18_kp87m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.6815, 3.8147e-06, -21.1732)
+
+[node name="building_church_blue" parent="Node3D2" instance=ExtResource("19_oj5jk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0061, 4.30584e-05, -36.2729)
+
+[node name="building_home_A_blue" parent="Node3D2" instance=ExtResource("20_hug7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.905, 1.66893e-07, -37.9078)
+
+[node name="building_home_B_blue" parent="Node3D2" instance=ExtResource("21_54a44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0188, 1.66893e-07, -39.132)
+
+[node name="building_archeryrange_blue" parent="Node3D2" instance=ExtResource("15_dw73j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, -12)

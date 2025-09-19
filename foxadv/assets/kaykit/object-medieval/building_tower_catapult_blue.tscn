@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl87vvrv87sdx"]
+
+[ext_resource type="PackedScene" uid="uid://dmi1mwbulxa0s" path="res://assets/kaykit/medieval/builing-blue/building_tower_catapult_blue.gltf" id="1_25fxr"]
+
+[node name="building_tower_catapult_blue" instance=ExtResource("1_25fxr")]

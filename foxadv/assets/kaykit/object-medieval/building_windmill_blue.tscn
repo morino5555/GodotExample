@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://djs4hw5x2lt4p"]
+
+[ext_resource type="PackedScene" uid="uid://cthmrulfp2fvf" path="res://assets/kaykit/medieval/builing-blue/building_windmill_blue.gltf" id="1_lk3jc"]
+
+[node name="building_windmill_blue" instance=ExtResource("1_lk3jc")]

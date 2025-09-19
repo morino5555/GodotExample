@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://j7see25ka3wg"]
+
+[ext_resource type="PackedScene" uid="uid://b44wb4qwrnj4r" path="res://assets/kaykit/medieval/builing-blue/building_blacksmith_blue.gltf" id="1_m641k"]
+
+[node name="building_blacksmith_blue" instance=ExtResource("1_m641k")]

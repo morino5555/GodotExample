@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://baltrmajcc16v"]
+
+[ext_resource type="PackedScene" uid="uid://3cuuuhmnqges" path="res://assets/kenney/nature/plant_bush.glb" id="1_r70hc"]
+
+[node name="plant_bush" instance=ExtResource("1_r70hc")]

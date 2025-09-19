@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://chmu788hhonn7"]
+
+[ext_resource type="PackedScene" uid="uid://v0fjjh4vknxo" path="res://assets/kaykit/medieval/builing-neutral/wall_corner_A_outside.gltf" id="1_78g8u"]
+
+[node name="wall_corner_A_outside" instance=ExtResource("1_78g8u")]

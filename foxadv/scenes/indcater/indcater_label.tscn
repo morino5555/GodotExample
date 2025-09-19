@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcgnwtfh80oh8"]
+
+[ext_resource type="Script" uid="uid://bdn4835lxd2lx" path="res://scenes/indcater/indcater_label.gd" id="1_qv012"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qv012"]
+viewport_path = NodePath("SubViewport")
+
+[node name="IndcaterLabel" type="Node3D"]
+script = ExtResource("1_qv012")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68941, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_qv012")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(150, 70)
+
+[node name="Label" type="Label" parent="SubViewport"]
+custom_minimum_size = Vector2(150, 70)
+offset_right = 150.0
+offset_bottom = 70.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 50
+text = "50"
+horizontal_alignment = 1

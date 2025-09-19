@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4cxgk6nnmhri"]
+
+[ext_resource type="PackedScene" uid="uid://0disnovct68t" path="res://assets/kenney/nature/mushroom_red.glb" id="1_xj4p3"]
+
+[node name="mushroom_red" instance=ExtResource("1_xj4p3")]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bklotyvh1wx1p"]
+
+[ext_resource type="Texture2D" uid="uid://d1atip1s8f8qg" path="res://assets/rotting/cave/cave-platformer-tileset-16x16.png" id="1_hv2nl"]
+[ext_resource type="Script" uid="uid://bb0yn8kvt3241" path="res://scenes/object/cave_diamond_red.gd" id="1_l2h2q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2h2q"]
+size = Vector2(26, 22)
+
+[node name="CaveDiamondRed" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_l2h2q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_hv2nl")
+offset = Vector2(0, -5.5)
+region_enabled = true
+region_rect = Rect2(1, 163, 14, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_l2h2q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

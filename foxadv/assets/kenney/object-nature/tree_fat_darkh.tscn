@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d02qxcbfg6tuk"]
+
+[ext_resource type="PackedScene" uid="uid://dq3a2ya4peeti" path="res://assets/kenney/nature/tree_fat_darkh.glb" id="1_62kqk"]
+
+[node name="tree_fat_darkh" instance=ExtResource("1_62kqk")]

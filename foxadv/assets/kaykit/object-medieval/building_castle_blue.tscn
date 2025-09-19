@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cowkprjjhvsv"]
+
+[ext_resource type="PackedScene" uid="uid://bk1o021ayh7ls" path="res://assets/kaykit/medieval/builing-blue/building_castle_blue.gltf" id="1_8n3om"]
+
+[node name="building_castle_blue" instance=ExtResource("1_8n3om")]

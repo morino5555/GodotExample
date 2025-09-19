@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cidmfmee7epai"]
+
+[ext_resource type="PackedScene" uid="uid://q50p2uugyvux" path="res://assets/kenney/nature/campfire_stones.glb" id="1_xnukr"]
+
+[node name="campfire_stones" instance=ExtResource("1_xnukr")]

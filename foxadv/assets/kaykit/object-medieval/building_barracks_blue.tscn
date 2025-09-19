@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb478csc13w3b"]
+
+[ext_resource type="PackedScene" uid="uid://brt32muo632qt" path="res://assets/kaykit/medieval/builing-blue/building_barracks_blue.gltf" id="1_jd5rl"]
+
+[node name="building_barracks_blue" instance=ExtResource("1_jd5rl")]

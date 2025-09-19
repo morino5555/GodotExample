@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://nd3y35w5mg52"]
+
+[ext_resource type="Texture2D" uid="uid://d1atip1s8f8qg" path="res://assets/rotting/cave/cave-platformer-tileset-16x16.png" id="1_171ji"]
+[ext_resource type="Script" uid="uid://cktojck20s75b" path="res://scenes/object/cave_mushroom_1.gd" id="1_c0vqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0vqh"]
+size = Vector2(11, 10)
+
+[node name="CaveMushroom1" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_c0vqh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_171ji")
+offset = Vector2(0, -5.5)
+region_enabled = true
+region_rect = Rect2(97, 149, 15, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -5)
+shape = SubResource("RectangleShape2D_c0vqh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

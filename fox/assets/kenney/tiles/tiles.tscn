@@ -1,0 +1,73 @@
+[gd_scene load_steps=24 format=3 uid="uid://ducf2yx17616f"]
+
+[ext_resource type="PackedScene" uid="uid://d1e31wl4aq62a" path="res://assets/kenney/nature/cliff_blockCave_stone.glb" id="1_opfgo"]
+[ext_resource type="PackedScene" uid="uid://c2vqakt88j1y0" path="res://assets/kenney/nature/cliff_blockHalf_stone.glb" id="2_oeo08"]
+[ext_resource type="PackedScene" uid="uid://df583qb3k2j0o" path="res://assets/kenney/nature/cliff_block_stone.glb" id="3_200gt"]
+[ext_resource type="PackedScene" uid="uid://bx1osl3viebdo" path="res://assets/kenney/nature/cliff_cave_stone.glb" id="4_sbh25"]
+[ext_resource type="PackedScene" uid="uid://bwpcbyskg0umq" path="res://assets/kenney/nature/cliff_cornerInnerLarge_stone.glb" id="5_ekpg7"]
+[ext_resource type="PackedScene" uid="uid://dfibv1ioj0bkb" path="res://assets/kenney/nature/cliff_cornerInnerTop_stone.glb" id="6_0jjph"]
+[ext_resource type="PackedScene" uid="uid://dink3d305rjlf" path="res://assets/kenney/nature/cliff_cornerInner_stone.glb" id="7_yn8kr"]
+[ext_resource type="PackedScene" uid="uid://cvmb50ldqy3kj" path="res://assets/kenney/nature/cliff_cornerLarge_stone.glb" id="8_jlyba"]
+[ext_resource type="PackedScene" uid="uid://beg1b27s2cxy0" path="res://assets/kenney/nature/cliff_cornerTop_stone.glb" id="9_1djkd"]
+[ext_resource type="PackedScene" uid="uid://ch0g07m75jfcu" path="res://assets/kenney/nature/cliff_corner_stone.glb" id="10_dub2e"]
+[ext_resource type="PackedScene" uid="uid://dk0ye7l0nkxkb" path="res://assets/kenney/nature/cliff_diagonal_stone.glb" id="11_fe48e"]
+[ext_resource type="PackedScene" uid="uid://dr2fcj0ruhg3k" path="res://assets/kenney/nature/cliff_halfCornerInner_stone.glb" id="12_lfx6y"]
+[ext_resource type="PackedScene" uid="uid://bv71jiimdogak" path="res://assets/kenney/nature/cliff_halfCorner_stone.glb" id="13_rrl30"]
+[ext_resource type="PackedScene" uid="uid://cbrtvn815w685" path="res://assets/kenney/nature/cliff_half_stone.glb" id="14_o6nu2"]
+[ext_resource type="PackedScene" uid="uid://b86j8ohdoj1on" path="res://assets/kenney/nature/cliff_large_stone.glb" id="15_k7v7f"]
+[ext_resource type="PackedScene" uid="uid://cukp3n8o25mw0" path="res://assets/kenney/nature/cliff_stepsCornerInner_stone.glb" id="16_jwtx4"]
+[ext_resource type="PackedScene" uid="uid://p06p3cy2du2m" path="res://assets/kenney/nature/cliff_stepsCorner_stone.glb" id="17_7fa8y"]
+[ext_resource type="PackedScene" uid="uid://dcpq0171u324y" path="res://assets/kenney/nature/cliff_steps_stone.glb" id="18_f07jd"]
+[ext_resource type="PackedScene" uid="uid://b2sjqdtnqxchw" path="res://assets/kenney/nature/cliff_stone.glb" id="19_cnx01"]
+[ext_resource type="PackedScene" uid="uid://brohnv7revsx" path="res://assets/kenney/nature/cliff_topDiagonal_stone.glb" id="20_rknyt"]
+[ext_resource type="PackedScene" uid="uid://des7fex4dur1s" path="res://assets/kenney/nature/cliff_top_stone.glb" id="21_5cyp2"]
+[ext_resource type="PackedScene" uid="uid://c2rutrle2pgc5" path="res://assets/kenney/nature/cliff_waterfallTop_stone.glb" id="22_8tcn4"]
+[ext_resource type="PackedScene" uid="uid://nr3bx3rlnvlp" path="res://assets/kenney/nature/cliff_waterfall_stone.glb" id="23_5nou4"]
+
+[node name="tiles" type="Node3D"]
+
+[node name="cliff_blockCave_stone2" parent="." instance=ExtResource("1_opfgo")]
+
+[node name="cliff_blockHalf_stone2" parent="." instance=ExtResource("2_oeo08")]
+
+[node name="cliff_block_stone2" parent="." instance=ExtResource("3_200gt")]
+
+[node name="cliff_cave_stone2" parent="." instance=ExtResource("4_sbh25")]
+
+[node name="cliff_cornerInnerLarge_stone2" parent="." instance=ExtResource("5_ekpg7")]
+
+[node name="cliff_cornerInnerTop_stone2" parent="." instance=ExtResource("6_0jjph")]
+
+[node name="cliff_cornerInner_stone2" parent="." instance=ExtResource("7_yn8kr")]
+
+[node name="cliff_cornerLarge_stone2" parent="." instance=ExtResource("8_jlyba")]
+
+[node name="cliff_cornerTop_stone2" parent="." instance=ExtResource("9_1djkd")]
+
+[node name="cliff_corner_stone2" parent="." instance=ExtResource("10_dub2e")]
+
+[node name="cliff_diagonal_stone2" parent="." instance=ExtResource("11_fe48e")]
+
+[node name="cliff_halfCornerInner_stone2" parent="." instance=ExtResource("12_lfx6y")]
+
+[node name="cliff_halfCorner_stone2" parent="." instance=ExtResource("13_rrl30")]
+
+[node name="cliff_half_stone2" parent="." instance=ExtResource("14_o6nu2")]
+
+[node name="cliff_large_stone2" parent="." instance=ExtResource("15_k7v7f")]
+
+[node name="cliff_stepsCornerInner_stone2" parent="." instance=ExtResource("16_jwtx4")]
+
+[node name="cliff_stepsCorner_stone2" parent="." instance=ExtResource("17_7fa8y")]
+
+[node name="cliff_steps_stone2" parent="." instance=ExtResource("18_f07jd")]
+
+[node name="cliff_stone2" parent="." instance=ExtResource("19_cnx01")]
+
+[node name="cliff_topDiagonal_stone2" parent="." instance=ExtResource("20_rknyt")]
+
+[node name="cliff_top_stone2" parent="." instance=ExtResource("21_5cyp2")]
+
+[node name="cliff_waterfallTop_stone2" parent="." instance=ExtResource("22_8tcn4")]
+
+[node name="cliff_waterfall_stone2" parent="." instance=ExtResource("23_5nou4")]

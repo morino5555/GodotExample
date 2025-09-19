@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ykqbfsa71k44"]
+
+[ext_resource type="PackedScene" uid="uid://bfuugrxqfix1i" path="res://assets/kenney/nature/statue_obelisk.glb" id="1_paki4"]
+
+[node name="statue_obelisk" instance=ExtResource("1_paki4")]

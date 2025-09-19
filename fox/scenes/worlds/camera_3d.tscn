@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dap7cqpc6dpwi"]
+
+[ext_resource type="Script" uid="uid://dvpb7qaputjh0" path="res://scenes/worlds/camera_3d.gd" id="1_jyejp"]
+
+[node name="Camera3D" type="Camera3D"]
+transform = Transform3D(0.866025, 0.353553, -0.353553, -0.12941, 0.841506, 0.524519, 0.482963, -0.408494, 0.774519, 0, 0, 0)
+cull_mask = 1048063
+script = ExtResource("1_jyejp")
+lerp_speed = 10.0
+offset = Vector3(4, 6, -8)

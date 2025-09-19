@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://7d1kr6p80rso"]
+
+[ext_resource type="PackedScene" uid="uid://bedgxlb8sj4vx" path="res://assets/kenney/nature/grass_large.glb" id="1_ygnqe"]
+
+[node name="grass_large" instance=ExtResource("1_ygnqe")]
